@@ -282,7 +282,7 @@ const Navbar = () => {
                     >
                       {link.name}
                       {isActive ? (
-                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                       ) : (
                         <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
                       )}
@@ -307,7 +307,7 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isServicesActive ? (
-                    <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                   ) : (
                     <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
                   )}
@@ -372,7 +372,7 @@ const Navbar = () => {
                     >
                       {link.name}
                       {isActive ? (
-                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                       ) : (
                         <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-out group-hover:w-full"></span>
                       )}
