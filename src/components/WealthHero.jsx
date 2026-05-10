@@ -127,10 +127,10 @@ const WealthHero = () => {
                     <span className="text-brand-gold/80 font-playfair font-black text-2xl sm:text-3xl mb-1 group-hover:text-brand-gold transition-colors duration-500">
                       {item.id}
                     </span>
-                    <h3 className="text-[14px] sm:text-xs md:text-sm lg:text-[15px] font-montserrat font-black uppercase tracking-[0.15em] text-white group-hover:text-brand-gold transition-colors duration-500 mb-2">
+                    <h3 className="text-[15px] sm:text-sm md:text-base lg:text-lg font-montserrat font-bold uppercase tracking-[0.12em] text-white group-hover:text-brand-gold transition-colors duration-500 mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-[12px] sm:text-[11px] md:text-xs font-light text-white/50 leading-relaxed group-hover:text-white/85 transition-colors duration-700 max-w-[90%]">
+                    <p className="text-sm md:text-base font-light text-white/60 leading-relaxed group-hover:text-white/85 transition-colors duration-700 max-w-[90%]">
                       {item.desc}
                     </p>
                   </div>
