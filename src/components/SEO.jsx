@@ -3,70 +3,70 @@ import { useLocation } from 'react-router-dom';
 
 const metaData = {
   "/": {
-    title: "Athiraa Consultants | Trusted Financial Advisory in India",
+    title: "Athiraa Consultants",
     description: "Athiraa Consultants — India's trusted financial advisory firm for wealth management, corporate finance, real estate, and tax planning. Personalised solutions built on trust.",
     keywords: "financial advisory India, wealth management, corporate finance, tax advisory, real estate advisory, Athiraa Consultants",
     ogTitle: "Athiraa Consultants | Trusted Financial Advisory",
     ogDescription: "Personalised financial solutions for wealth, growth, and legacy. Built on trust, driven by vision."
   },
   "/about": {
-    title: "About Us | Athiraa Consultants — Built on Trust, Driven by Vision",
+    title: "About Us | Athiraa Consultants",
     description: "Learn about Athiraa Consultants, an elite Indian financial advisory firm. Our team brings deep expertise in wealth management, corporate structuring, tax, and property advisory.",
     keywords: "about Athiraa Consultants, trusted financial advisors India, wealth preservation experts, corporate financial strategies",
     ogTitle: "About Us | Athiraa Consultants",
     ogDescription: "A trusted financial advisory team with institutional precision and a focus on integrity, transparency, and family office advisory."
   },
   "/expertise": {
-    title: "Our Expertise | Athiraa Consultants — Comprehensive Advisory",
+    title: "Our Expertise | Athiraa Consultants",
     description: "Discover our specialized financial advisory services spanning Personal Wealth, Corporate Finance, Real Estate, and Structured Tax Advisory with transparent SEBI-aligned execution.",
     keywords: "wealth management, corporate capital advisory, real estate investment, tax advisory India",
     ogTitle: "Our Services & Expertise | Athiraa Consultants",
     ogDescription: "Tailored strategic advisory from seasoned professionals to help you grow, protect, and pass on your capital legacy seamlessly."
   },
   "/services": {
-    title: "Financial & Advisory Services | Athiraa Consultants",
+    title: "Our Services | Athiraa Consultants",
     description: "Explore our strategic advisory services: Private Wealth Planning, Debt Management, Capital Raising, Property Acquisition, and Family Office Compliance.",
     keywords: "family office advisory, corporate finance, tax advisory, real estate investment services",
     ogTitle: "Our Services | Athiraa Consultants",
     ogDescription: "Discover tailored financial strategies for individual prosperity and business growth."
   },
   "/services/wealth-management": {
-    title: "Private Wealth Management Services | Athiraa Consultants",
+    title: "Wealth Management | Athiraa Consultants",
     description: "Strategic investment planning, Direct Equity, Sovereign Gold Bonds, Mutual Funds, and Succession Planning designed to compound your generational family legacy with absolute transparency.",
     keywords: "wealth management, investment planning, direct equity India, sovereign gold bonds, estate planning",
     ogTitle: "Private Wealth Management | Athiraa Consultants",
     ogDescription: "Bespoke wealth management and succession strategy designed to compound and protect your legacy with elite Indian market research."
   },
   "/services/corporate-finance": {
-    title: "Corporate Finance & Capital Advisory | Athiraa Consultants",
+    title: "Corporate Finance | Athiraa Consultants",
     description: "Structured capital advisory, debt management, and customized business growth strategies designed to optimize corporate performance and fuel sustainable market scaling.",
     keywords: "corporate finance, capital advisory, debt management, business growth strategy, raise capital",
     ogTitle: "Corporate Finance Advisory | Athiraa Consultants",
     ogDescription: "Unlock corporate scaling with structured capital, strategic debt management, and sustainable growth advisory."
   },
   "/services/capital-markets": {
-    title: "Capital Markets Advisory | Athiraa Consultants",
+    title: "Capital Markets | Athiraa Consultants",
     description: "Navigate public equity, private placements, syndication, IPO preparation, and strategic market listings with our experienced institutional capital market advisory.",
     keywords: "capital markets, equity syndication, IPO planning, private placement, debt syndicate",
     ogTitle: "Capital Markets Advisory | Athiraa Consultants",
     ogDescription: "Navigate complex capital listings, syndication, and public/private market placements with seasoned advisors."
   },
   "/services/real-estate": {
-    title: "Premium Real Estate Advisory | Athiraa Consultants",
+    title: "Real Estate Advisory | Athiraa Consultants",
     description: "End-to-end institutional property advisory. Comprehensive market research, acquisition strategy, and rental portfolio management for commercial, residential, and industrial properties.",
     keywords: "real estate advisory, commercial property investment, rental management, land acquisition India",
     ogTitle: "Real Estate Advisory | Athiraa Consultants",
     ogDescription: "Unlock premium real estate opportunities with rigorous market research, asset management, and structured acquisitions."
   },
   "/services/tax-advisory": {
-    title: "Tax Advisory & Compliance Services | Athiraa Consultants",
+    title: "Tax Advisory | Athiraa Consultants",
     description: "Professional tax planning, regulatory compliance, family office accounting, and structured tax optimization for high-net-worth individuals, NRIs, and Indian corporations.",
     keywords: "tax advisory, tax planning India, family office compliance, corporate tax filing, NRI tax advice",
     ogTitle: "Tax & Compliance Advisory | Athiraa Consultants",
     ogDescription: "Minimize liabilities and stay fully compliant under the latest direct and indirect Indian tax codes."
   },
   "/contact": {
-    title: "Contact Our Advisory Team | Athiraa Consultants",
+    title: "Contact Us | Athiraa Consultants",
     description: "Get in touch with our expert advisors in Chennai for a confidential consultation regarding wealth, corporate capital, tax, or property investments.",
     keywords: "contact Athiraa Consultants, financial advisory Chennai, hire wealth managers, confidential consultation",
     ogTitle: "Connect With Our Advisory Team | Athiraa Consultants",
