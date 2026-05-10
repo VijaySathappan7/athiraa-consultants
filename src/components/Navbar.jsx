@@ -72,10 +72,9 @@ const Navbar = () => {
     sectionsRef.current = Array.from(document.querySelectorAll("section"));
   }, [location.pathname]);
 
-  // 1. SCROLL SENSING & DIRECTION (Optimized for 120fps with absolute scroll-state machine)
+  // 1. SCROLL SENSING & DIRECTION (Robust, bug-free scroll direction observer)
   useEffect(() => {
     let ticking = false;
-    let scrollStopTimer = null;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -83,13 +82,9 @@ const Navbar = () => {
 
       if (isAtTop) {
         setHidden(false);
-        if (scrollStopTimer) {
-          clearTimeout(scrollStopTimer);
-          scrollStopTimer = null;
-        }
       } else {
         const diff = currentScrollY - lastScrollY.current;
-        const isSignificant = Math.abs(diff) > 1.2;
+        const isSignificant = Math.abs(diff) > 2;
 
         if (isSignificant) {
           if (diff > 0) {
@@ -99,20 +94,10 @@ const Navbar = () => {
             // Scrolling UP -> SHOW (completely fixed and fully appear)
             setHidden(false);
           }
-
-          // Reset stop timer during active scrolling
-          if (scrollStopTimer) {
-            clearTimeout(scrollStopTimer);
-          }
-
-          // Schedule auto-reveal after 150ms of inactivity (scroll stop to show)
-          scrollStopTimer = setTimeout(() => {
-            setHidden(false);
-          }, 150); // Snappy 150ms delay to pop back up on scroll stop
         }
       }
 
-      // Synchronously record lastScrollY immediately to prevent state/frame update lag!
+      // Synchronously record lastScrollY immediately to prevent state update latency
       lastScrollY.current = currentScrollY;
 
       // Defer aesthetic-only backdrop & height states to requestAnimationFrame for 120fps
@@ -129,7 +114,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (scrollStopTimer) clearTimeout(scrollStopTimer);
     };
   }, []);
 
