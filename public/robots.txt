@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Host & Sitemap Location
+Host: https://athiraaconsultants.com
+Sitemap: https://athiraaconsultants.com/sitemap.xml
