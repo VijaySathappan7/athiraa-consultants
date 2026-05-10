@@ -47,7 +47,6 @@ const Navbar = () => {
   const [isWhite, setIsWhite] = useState(false);
   const [bespokeOpen, setBespokeOpen] = useState(false);
 
-  const [activeSection, setActiveSection] = useState("hero");
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -65,16 +64,10 @@ const Navbar = () => {
     }
   }, [menuOpen]);
 
-  const sectionsRef = useRef([]);
-
-  // Cache sections to avoid querySelectorAll in the scroll handler
-  useEffect(() => {
-    sectionsRef.current = Array.from(document.querySelectorAll("section"));
-  }, [location.pathname]);
-
-  // 1. SCROLL SENSING & DIRECTION (Robust, bug-free scroll direction observer)
+  // 1. SCROLL SENSING & DIRECTION (Cinematic headroom with idle auto-reveal)
   useEffect(() => {
     let ticking = false;
+    let scrollStopTimer = null;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -82,25 +75,39 @@ const Navbar = () => {
 
       if (isAtTop) {
         setHidden(false);
+        if (scrollStopTimer) {
+          clearTimeout(scrollStopTimer);
+          scrollStopTimer = null;
+        }
       } else {
         const diff = currentScrollY - lastScrollY.current;
-        const isSignificant = Math.abs(diff) > 2;
+        const isSignificant = Math.abs(diff) > 1.5;
 
         if (isSignificant) {
           if (diff > 0) {
-            // Scrolling DOWN -> HIDE
+            // Scrolling DOWN -> HIDE navbar smoothly
             setHidden(true);
           } else {
-            // Scrolling UP -> SHOW (completely fixed and fully appear)
+            // Scrolling UP -> SHOW navbar smoothly
             setHidden(false);
           }
+
+          // Clear previous idle timer during active scroll
+          if (scrollStopTimer) {
+            clearTimeout(scrollStopTimer);
+          }
+
+          // Automatically reveal navbar after 350ms of inactivity (idle)
+          scrollStopTimer = setTimeout(() => {
+            setHidden(false);
+          }, 350);
         }
       }
 
-      // Synchronously record lastScrollY immediately to prevent state update latency
+      // Synchronously record current scroll position to guarantee zero lag
       lastScrollY.current = currentScrollY;
 
-      // Defer aesthetic-only backdrop & height states to requestAnimationFrame for 120fps
+      // Defer background aesthetic state updates to requestAnimationFrame for 120fps performance
       if (!ticking) {
         window.requestAnimationFrame(() => {
           setScrolled(window.scrollY > 20);
@@ -114,10 +121,11 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollStopTimer) clearTimeout(scrollStopTimer);
     };
   }, []);
 
-  // 2. THEME SENSING USING INTERSECTION OBSERVER
+  // 2. THEME SENSING USING INTERSECTION OBSERVER (Purely background-responsive, no scrollspy highlighting)
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -129,7 +137,6 @@ const Navbar = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && entry.target.id) {
           setIsWhite(LIGHT_SECTIONS.has(entry.target.id));
-          setActiveSection(entry.target.id);
         }
       });
     };
@@ -149,7 +156,7 @@ const Navbar = () => {
 
     updateObservation();
 
-    // Use MutationObserver instead of costly setInterval to watch for new sections
+    // Watch for new sections dynamically without costly polling
     const mutationObserver = new MutationObserver(() => {
       updateObservation();
     });
@@ -163,34 +170,24 @@ const Navbar = () => {
 
   // Click Outside to Dismiss Services Dropdown
   useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (!e.target.closest("nav")) {
+    const handleClickOutside = (event) => {
+      if (servicesOpen && !event.target.closest(".group")) {
         setServicesOpen(false);
       }
     };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [servicesOpen]);
 
-  // 3. SCROLL LOCK (Enhanced with Lenis lifecycle control)
+  // 3. SCROLL LOCK
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
-      if (window.lenis) {
-        window.lenis.stop();
-      }
+      if (window.lenis) window.lenis.stop();
     } else {
       document.body.style.overflow = '';
-      if (window.lenis) {
-        window.lenis.start();
-      }
+      if (window.lenis) window.lenis.start();
     }
-    return () => {
-      document.body.style.overflow = '';
-      if (window.lenis) {
-        window.lenis.start();
-      }
-    };
   }, [menuOpen]);
 
   const handleNavClick = (e, link) => {
@@ -202,40 +199,30 @@ const Navbar = () => {
       navigate(link.to);
     }
 
-    // Instantly trigger the native smooth scroll without artificial delays
+    // Instantly smooth-scroll to section
     if (window.scrollToSection) {
       window.scrollToSection(link.sectionId);
     }
   };
 
-  const active = isWhite;
-  const isServicesActive = [
-    "services",
-    "wealth-hero",
-    "wealth-content",
-    "corporate-hero",
-    "corporate-content",
-    "capital-markets-hero",
-    "capital-markets-content",
-    "real-estate-hero",
-    "real-estate-content",
-    "tax-hero",
-    "tax-content"
-  ].includes(activeSection);
   const contactLink = mainLinks.find((link) => link.name === "Contact");
 
   return (
     <>
       <motion.nav
-        initial={{ y: "-120%" }}
-        animate={{ y: (hidden && !menuOpen) ? "-120%" : "0%" }}
-        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ y: "-110%", opacity: 0, filter: "blur(12px)" }}
+        animate={{
+          y: (hidden && !menuOpen) ? "-110%" : "0%",
+          opacity: (hidden && !menuOpen) ? 0 : 1,
+          filter: (hidden && !menuOpen) ? "blur(12px)" : "blur(0px)"
+        }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed z-[100] top-0 left-0 w-full rounded-none px-6 md:px-12 py-1 transition-all duration-500 ease-out ${(menuOpen || isDrawerActive)
           ? isWhite
             ? "bg-white/80 backdrop-blur-[30px] border-b border-black/[0.04] h-[100dvh] lg:h-auto"
             : "bg-[#0b0c10]/80 backdrop-blur-[30px] border-b border-white/10 h-[100dvh] lg:h-auto"
           : scrolled
-            ? active
+            ? isWhite
               ? "bg-white/60 backdrop-blur-[40px] border-b border-black/[0.04] shadow-[0_10px_45px_rgba(0,0,0,0.03)] h-auto"
               : "bg-[#0b0c10]/70 backdrop-blur-[40px] border-b border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.15)] h-auto"
             : "bg-transparent border-b border-transparent h-auto"
@@ -247,7 +234,7 @@ const Navbar = () => {
           <a href="/" onClick={(e) => handleNavClick(e, mainLinks[0])} className="flex items-center gap-2.5 md:gap-3.5 group z-[150] magnetic">
             <img src={logo} className="w-8 h-8 md:w-9 md:h-9 object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl" alt="Athiraa Logo" />
             <div className="flex flex-col">
-              <span className={`text-sm md:text-base font-black tracking-[0.25em] transition-colors duration-500 ${active ? "text-brand-primary" : "text-white"}`}>
+              <span className={`text-sm md:text-base font-black tracking-[0.25em] transition-colors duration-500 ${isWhite ? "text-brand-primary" : "text-white"}`}>
                 ATHIRAA
               </span>
               <p className="text-[8px] md:text-[9px] tracking-[0.4em] text-brand-gold font-bold mt-0.5 leading-none">
@@ -260,13 +247,12 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-10">
             <ul className="flex items-center gap-8 text-[12px] xl:text-[13px] font-bold tracking-[0.2em] uppercase">
               {mainLinks.slice(0, 1).map((link) => {
-                const isActive = activeSection === link.sectionId;
                 return (
                   <li key={link.name} className="relative">
                     <a
                       href={link.to}
                       onClick={(e) => handleNavClick(e, link)}
-                      className={`transition-colors duration-300 relative py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                      className={`transition-colors duration-300 relative py-2 magnetic ${isWhite ? "text-brand-primary hover:text-brand-gold" : "text-white hover:text-brand-gold"}`}
                     >
                       {link.name}
                     </a>
@@ -283,7 +269,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={(e) => handleNavClick(e, servicesOverviewLink)}
-                  className={`flex items-center gap-2 relative py-2 transition-colors duration-300 uppercase font-bold tracking-[0.2em] magnetic ${active ? "text-brand-primary" : "text-white"} ${isServicesActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                  className={`flex items-center gap-2 relative py-2 transition-colors duration-300 uppercase font-bold tracking-[0.2em] magnetic ${isWhite ? "text-brand-primary hover:text-brand-gold" : "text-white hover:text-brand-gold"}`}
                 >
                   <span>Services</span>
                   <svg className={`w-3.5 h-3.5 transition-transform duration-700 ${servicesOpen ? 'rotate-180 text-brand-gold' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,7 +286,7 @@ const Navbar = () => {
                       transition={{ duration: 0.30 }}
                       className="absolute left-1/2 -translate-x-1/2 top-full pt-4 origin-top"
                     >
-                      <div className={`w-80 rounded-[2rem] p-4 relative overflow-hidden transition-all duration-500 ${active
+                      <div className={`w-80 rounded-[2rem] p-4 relative overflow-hidden transition-all duration-500 ${isWhite
                         ? "bg-white/95 backdrop-blur-[40px] border border-black/[0.08] shadow-[0_30px_70px_rgba(0,0,0,0.12)]"
                         : "bg-[#0b0c10]/92 backdrop-blur-[40px] border border-white/10 shadow-[0_30px_70px_rgba(0,0,0,0.55)]"
                         }`}>
@@ -310,7 +296,7 @@ const Navbar = () => {
                               key={item.name}
                               href={item.to}
                               onClick={(e) => handleNavClick(e, item)}
-                              className={`block px-6 py-4 rounded-2xl text-[11px] font-bold tracking-[0.15em] uppercase transition-all duration-500 ${active
+                              className={`block px-6 py-4 rounded-2xl text-[11px] font-bold tracking-[0.15em] uppercase transition-all duration-500 ${isWhite
                                 ? "hover:bg-black/[0.04] text-brand-primary hover:text-brand-gold hover:pl-8"
                                 : "hover:bg-white/[0.05] text-white/85 hover:text-brand-gold hover:pl-8"
                                 }`}
@@ -330,8 +316,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setBespokeOpen(true)}
-                  className={`relative py-2 text-[12px] xl:text-[13px] font-black uppercase transition-colors duration-300 magnetic ${active ? "text-brand-primary" : "text-white"
-                    } hover:text-brand-gold`}
+                  className={`relative py-2 text-[12px] xl:text-[13px] font-black uppercase transition-colors duration-300 magnetic ${isWhite ? "text-brand-primary hover:text-brand-gold" : "text-white hover:text-brand-gold"}`}
                 >
                   <span className="tracking-[0.2em]">Bespoke</span>
                   <span className="text-brand-gold" style={{ letterSpacing: 'normal' }}>.</span>
@@ -339,13 +324,12 @@ const Navbar = () => {
               </li>
 
               {mainLinks.slice(1).map((link) => {
-                const isActive = activeSection === link.sectionId;
                 return (
                   <li key={link.name} className="relative">
                     <a
                       href={link.to}
                       onClick={(e) => handleNavClick(e, link)}
-                      className={`transition-colors duration-300 relative py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                      className={`transition-colors duration-300 relative py-2 magnetic ${isWhite ? "text-brand-primary hover:text-brand-gold" : "text-white hover:text-brand-gold"}`}
                     >
                       {link.name}
                     </a>
@@ -359,7 +343,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               href={contactLink.to}
               onClick={(e) => handleNavClick(e, contactLink)}
-              className={`px-8 py-3.5 rounded-full text-[11px] tracking-[0.2em] font-black uppercase transition-all duration-500 shadow-xl magnetic ${active
+              className={`px-8 py-3.5 rounded-full text-[11px] tracking-[0.2em] font-black uppercase transition-all duration-500 shadow-xl magnetic ${isWhite
                 ? "bg-brand-primary text-white hover:bg-brand-gold"
                 : "bg-white text-black hover:bg-brand-gold hover:text-white"
                 }`}
