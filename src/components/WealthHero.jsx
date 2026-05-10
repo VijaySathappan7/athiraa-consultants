@@ -118,7 +118,7 @@ const WealthHero = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.8 }}
-                  className="relative overflow-hidden p-4 sm:p-6 md:p-8 aspect-auto sm:aspect-[2/1] min-h-[100px] sm:min-h-0 flex flex-col items-center justify-center text-center glass-premium rounded-[1.75rem] group will-change-transform"
+                  className="relative overflow-hidden p-6 sm:p-6 md:p-8 xl:p-10 min-h-[130px] sm:min-h-[180px] lg:min-h-[190px] xl:min-h-[210px] flex flex-col items-center justify-center text-center glass-premium rounded-[1.75rem] group will-change-transform"
                 >
                   {/* Embedded Glass Glow Sphere */}
                   <div className="absolute inset-0 bg-white/[0.01] group-hover:bg-white/[0.03] transition-all duration-700 pointer-events-none" />
