@@ -171,7 +171,7 @@ const Services = () => {
                 Our Expertise
               </p>
             </div>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-7xl xl:text-8xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-[2.1rem] xs:text-[2.5rem] sm:text-4xl lg:text-6xl xl:text-[4.5rem] font-playfair text-brand-primary leading-[1.15] tracking-tight">
               Personalised <span className="italic font-light text-brand-gold">Guidance.</span> <br />
               Deep <span className="italic font-light text-brand-gold">Commitment.</span>
             </h2>
@@ -202,7 +202,7 @@ const Services = () => {
               <div className="w-12 h-[1px] bg-brand-gold"></div>
               <p className="text-[10px] tracking-[0.7em] uppercase text-brand-gold font-black">Our Expertise</p>
             </div>
-            <h2 className="text-[1.75rem] xs:text-[2.25rem] sm:text-[2.85rem] md:text-5xl font-playfair text-brand-primary leading-[1.1] tracking-tight mb-6">
+            <h2 className="text-[1.6rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-playfair text-brand-primary leading-[1.15] tracking-tight mb-6">
               Personalised <span className="italic font-light text-brand-gold">Guidance.</span> <br />
               Deep <span className="italic font-light text-brand-gold">Commitment.</span>
             </h2>
