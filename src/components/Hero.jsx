@@ -72,7 +72,7 @@ const Hero = () => {
   const contactLink = mainLinks.find((link) => link.name === "Contact");
 
   return (
-    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
+    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
       {/* BACKGROUND WITH PARALLAX */}
       <motion.div
         style={{ y: y1 }}
@@ -99,7 +99,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[110px] lg:pb-6">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
 
         {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
         <motion.div
@@ -125,7 +125,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[340px] xs:h-[400px] sm:h-[450px] lg:h-[clamp(360px,58vh,560px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[340px] xs:h-[400px] sm:h-[450px] lg:h-[clamp(300px,46vh,460px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
                 fetchPriority="high"
                 loading="eager"
               />
@@ -156,7 +156,7 @@ const Hero = () => {
             <div className="w-16 h-[1px] bg-brand-gold/30 mx-auto mb-4 sm:mb-6 lg:hidden"></div>
 
             {/* 2. Quote (Very big, elegant, placed below logo on mobile, directly below Ganesha on desktop) */}
-            <p className="text-[18px] xs:text-[22px] sm:text-[26px] lg:text-[28px] xl:text-[32px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-4 sm:mb-6">
+            <p className="text-[18px] xs:text-[22px] sm:text-[26px] lg:text-[23px] xl:text-[26px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-4 sm:mb-6">
               "Prosperity begins with the right guidance."
             </p>
 
@@ -187,7 +187,7 @@ const Hero = () => {
               <div className="w-20 h-[1px] bg-brand-gold/40 hidden md:block"></div>
             </motion.div>
 
-            <h1 className="text-[2.4rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-[3.8rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-10 perspective-1000">
+            <h1 className="text-[2.4rem] xs:text-[2.85rem] sm:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ const Hero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[17px] xs:text-[18px] sm:text-xl xl:text-2xl text-white/80 leading-relaxed mb-4 sm:mb-8 lg:mb-10 max-w-2xl font-light mx-auto lg:mx-0"
+              className="text-[17px] xs:text-[18px] sm:text-xl xl:text-xl text-white/80 leading-relaxed mb-4 sm:mb-8 lg:mb-8 max-w-2xl font-light mx-auto lg:mx-0"
             >
               We provide personalised financial and advisory solutions designed to help individuals, families, and businesses create, grow, and protect wealth with clarity and confidence.
             </motion.p>
@@ -224,7 +224,7 @@ const Hero = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center justify-center lg:justify-start text-white/70 font-light text-sm sm:text-xl mb-6 sm:mb-10 lg:mb-12 h-10 font-playfair"
+              className="flex items-center justify-center lg:justify-start text-white/70 font-light text-sm sm:text-xl mb-6 sm:mb-10 lg:mb-8 h-10 font-playfair"
             >
               <span className="mr-3 md:mr-4 text-white/50">Expertise in</span>
               <span className="font-medium text-white border-b border-brand-gold/40 pb-1">
