@@ -210,6 +210,7 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
+        style={{ willChange: "transform, opacity, filter" }}
         initial={{ y: "-110%", opacity: 0, filter: "blur(12px)" }}
         animate={{
           y: (hidden && !menuOpen) ? "-110%" : "0%",

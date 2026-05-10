@@ -24,7 +24,7 @@ const CustomCursor = () => {
       setIsMobile(window.matchMedia('(pointer: coarse)').matches);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', checkMobile, { passive: true });
 
     const moveCursor = (e) => {
       cursorX.set(e.clientX);
@@ -59,10 +59,10 @@ const CustomCursor = () => {
       });
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
-    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    document.addEventListener('mouseenter', handleMouseEnter, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
 
     return () => {
       window.removeEventListener('resize', checkMobile);

@@ -245,7 +245,7 @@ const BespokeModal = ({ open, onClose }) => {
 
     const currentScrollRef = scrollRef.current;
     if (currentScrollRef) {
-      currentScrollRef.addEventListener("scroll", handleScroll);
+      currentScrollRef.addEventListener("scroll", handleScroll, { passive: true });
     }
 
     return () => {
