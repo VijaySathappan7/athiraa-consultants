@@ -72,7 +72,7 @@ const Hero = () => {
   const contactLink = mainLinks.find((link) => link.name === "Contact");
 
   return (
-    <section id="hero" className="relative min-h-[140dvh] lg:min-h-[140vh] lg:h-[140vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
+    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
       {/* BACKGROUND WITH PARALLAX */}
       <motion.div
         style={{ y: y1 }}
@@ -99,7 +99,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[140dvh] lg:min-h-[140vh] lg:h-[140vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
 
         {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
         <motion.div
@@ -125,7 +125,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[400px] xs:h-[460px] sm:h-[520px] lg:h-[clamp(360px,52vh,540px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[400px] xs:h-[460px] sm:h-[520px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
                 fetchPriority="high"
                 loading="eager"
               />
@@ -184,7 +184,7 @@ const Hero = () => {
               <p className="text-xs sm:text-xs md:text-xs tracking-[0.5em] md:tracking-[0.7em] uppercase text-brand-gold font-black">
                 Athiraa Consultants
               </p>
-              <div className="w-20 h-[1px] bg-brand-gold/40 hidden md:block"></div>
+              <div className="w-28 h-[1px] bg-brand-gold/40 hidden md:block"></div>
             </motion.div>
 
             <h1 className="text-[2.75rem] xs:text-[3.25rem] sm:text-6xl lg:text-[3.8rem] xl:text-[4.25rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
@@ -245,7 +245,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={contactLink.to}
                 onClick={(e) => handleHeroNav(e, contactLink)}
-                className="w-full sm:w-auto px-8 py-3.5 sm:px-12 sm:py-5 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
+                className="w-full sm:w-auto px-8 py-3.5 sm:px-14 sm:py-5 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
               >
                 Get Started
               </motion.a>
@@ -254,7 +254,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={servicesOverviewLink.to}
                 onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
-                className="w-full sm:w-auto px-8 py-3.5 sm:px-12 sm:py-5 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
+                className="w-full sm:w-auto px-8 py-3.5 sm:px-14 sm:py-5 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
               >
                 Learn More
               </motion.a>
