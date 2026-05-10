@@ -281,11 +281,7 @@ const Navbar = () => {
                       className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      {isActive ? (
-                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
-                      ) : (
-                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
-                      )}
+                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
@@ -306,11 +302,7 @@ const Navbar = () => {
                   <svg className={`w-3.5 h-3.5 transition-transform duration-700 ${servicesOpen ? 'rotate-180 text-brand-gold' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
-                  {isServicesActive ? (
-                    <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
-                  ) : (
-                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
-                  )}
+                  <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isServicesActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </button>
 
                 <AnimatePresence>
@@ -371,11 +363,7 @@ const Navbar = () => {
                       className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      {isActive ? (
-                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
-                      ) : (
-                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-out group-hover:w-full"></span>
-                      )}
+                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
@@ -563,21 +551,6 @@ const Navbar = () => {
       <Suspense fallback={null}>
         <BespokeModal open={bespokeOpen} onClose={() => setBespokeOpen(false)} />
       </Suspense>
-    </>
-  );
-};
-
-export default Navbar;
-              </motion.a >
-            </motion.div >
-          )}
-        </AnimatePresence >
-      </motion.nav >
-
-  {/* BESPOKE POPUP MODAL */ }
-  < Suspense fallback = { null} >
-    <BespokeModal open={bespokeOpen} onClose={() => setBespokeOpen(false)} />
-      </Suspense >
     </>
   );
 };
