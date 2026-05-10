@@ -72,7 +72,7 @@ const Hero = () => {
   const contactLink = mainLinks.find((link) => link.name === "Contact");
 
   return (
-    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
+    <section id="hero" className="relative min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
       {/* BACKGROUND WITH PARALLAX */}
       <motion.div
         style={{ y: y1 }}
@@ -99,7 +99,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[100vh] lg:h-[100vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
 
         {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
         <motion.div
