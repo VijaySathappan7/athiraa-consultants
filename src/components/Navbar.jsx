@@ -266,10 +266,9 @@ const Navbar = () => {
                     <a
                       href={link.to}
                       onClick={(e) => handleNavClick(e, link)}
-                      className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                      className={`transition-colors duration-300 relative py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
@@ -284,13 +283,12 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={(e) => handleNavClick(e, servicesOverviewLink)}
-                  className={`flex items-center gap-2 relative group py-2 transition-colors duration-300 uppercase font-bold tracking-[0.2em] magnetic ${active ? "text-brand-primary" : "text-white"} ${isServicesActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                  className={`flex items-center gap-2 relative py-2 transition-colors duration-300 uppercase font-bold tracking-[0.2em] magnetic ${active ? "text-brand-primary" : "text-white"} ${isServicesActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                 >
                   <span>Services</span>
                   <svg className={`w-3.5 h-3.5 transition-transform duration-700 ${servicesOpen ? 'rotate-180 text-brand-gold' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
-                  <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isServicesActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </button>
 
                 <AnimatePresence>
@@ -332,12 +330,11 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setBespokeOpen(true)}
-                  className={`relative group py-2 text-[12px] xl:text-[13px] font-black uppercase transition-colors duration-300 magnetic ${active ? "text-brand-primary" : "text-white"
+                  className={`relative py-2 text-[12px] xl:text-[13px] font-black uppercase transition-colors duration-300 magnetic ${active ? "text-brand-primary" : "text-white"
                     } hover:text-brand-gold`}
                 >
                   <span className="tracking-[0.2em]">Bespoke</span>
                   <span className="text-brand-gold" style={{ letterSpacing: 'normal' }}>.</span>
-                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-brand-gold group-hover:w-full"></span>
                 </button>
               </li>
 
@@ -348,10 +345,9 @@ const Navbar = () => {
                     <a
                       href={link.to}
                       onClick={(e) => handleNavClick(e, link)}
-                      className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
+                      className={`transition-colors duration-300 relative py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
