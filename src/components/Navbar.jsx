@@ -282,7 +282,7 @@ const Navbar = () => {
                     >
                       {link.name}
                       {isActive ? (
-                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                       ) : (
                         <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
                       )}
@@ -307,7 +307,7 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                   {isServicesActive ? (
-                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                    <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                   ) : (
                     <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-[0.22, 1, 0.36, 1] group-hover:w-full"></span>
                   )}
@@ -372,7 +372,7 @@ const Navbar = () => {
                     >
                       {link.name}
                       {isActive ? (
-                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
+                        <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold rounded-full" />
                       ) : (
                         <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-out group-hover:w-full"></span>
                       )}
@@ -441,8 +441,8 @@ const Navbar = () => {
                 }
               }}
               className={`lg:hidden fixed inset-0 z-[140] flex flex-col pt-32 px-10 pb-10 touch-none overflow-y-auto transition-colors duration-500 ${isWhite
-                  ? "bg-white/95 backdrop-blur-[24px]"
-                  : "bg-[#050505]/92 backdrop-blur-[24px]"
+                ? "bg-white/95 backdrop-blur-[24px]"
+                : "bg-[#050505]/92 backdrop-blur-[24px]"
                 }`}
             >
               <motion.p
@@ -548,8 +548,8 @@ const Navbar = () => {
                 href={contactLink.to}
                 onClick={(e) => handleNavClick(e, contactLink)}
                 className={`mt-16 text-center py-6 rounded-2xl text-[11px] font-black tracking-[0.4em] uppercase shadow-2xl transition-all duration-500 ${isWhite
-                    ? "bg-brand-primary text-white hover:bg-brand-gold hover:text-white"
-                    : "bg-white text-black hover:bg-brand-gold hover:text-white"
+                  ? "bg-brand-primary text-white hover:bg-brand-gold hover:text-white"
+                  : "bg-white text-black hover:bg-brand-gold hover:text-white"
                   }`}
               >
                 Get Started
@@ -563,6 +563,21 @@ const Navbar = () => {
       <Suspense fallback={null}>
         <BespokeModal open={bespokeOpen} onClose={() => setBespokeOpen(false)} />
       </Suspense>
+    </>
+  );
+};
+
+export default Navbar;
+              </motion.a >
+            </motion.div >
+          )}
+        </AnimatePresence >
+      </motion.nav >
+
+  {/* BESPOKE POPUP MODAL */ }
+  < Suspense fallback = { null} >
+    <BespokeModal open={bespokeOpen} onClose={() => setBespokeOpen(false)} />
+      </Suspense >
     </>
   );
 };
