@@ -70,7 +70,7 @@ const WealthHero = () => {
                 <div className="w-20 h-[1px] bg-brand-gold/40"></div>
               </div>
 
-              <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.75rem] font-playfair text-white leading-[1.05] tracking-tight mb-4 sm:mb-6 lg:mb-8">
+              <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-playfair text-white leading-[1.05] tracking-tight mb-4 sm:mb-6 lg:mb-8">
                 Plan, Grow & Protect <br />
                 Your <span className="italic text-brand-gold/90 font-light">Wealth.</span>
               </h2>
