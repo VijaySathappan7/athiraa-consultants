@@ -125,7 +125,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[340px] xs:h-[400px] sm:h-[450px] lg:h-[clamp(300px,46vh,460px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[400px] xs:h-[460px] sm:h-[520px] lg:h-[clamp(360px,52vh,540px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
                 fetchPriority="high"
                 loading="eager"
               />
@@ -187,7 +187,7 @@ const Hero = () => {
               <div className="w-20 h-[1px] bg-brand-gold/40 hidden md:block"></div>
             </motion.div>
 
-            <h1 className="text-[2.4rem] xs:text-[2.85rem] sm:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
+            <h1 className="text-[2.75rem] xs:text-[3.25rem] sm:text-6xl lg:text-[3.8rem] xl:text-[4.25rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
