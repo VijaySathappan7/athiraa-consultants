@@ -89,14 +89,14 @@ const Navbar = () => {
         }
       } else {
         const diff = currentScrollY - lastScrollY.current;
-        const isSignificant = Math.abs(diff) > 1.5;
+        const isSignificant = Math.abs(diff) > 1.2;
 
         if (isSignificant) {
           if (diff > 0) {
             // Scrolling DOWN -> HIDE
             setHidden(true);
           } else {
-            // Scrolling UP -> SHOW
+            // Scrolling UP -> SHOW (completely fixed and fully appear)
             setHidden(false);
           }
 
@@ -105,19 +105,21 @@ const Navbar = () => {
             clearTimeout(scrollStopTimer);
           }
 
-          // Schedule auto-hide after 1500ms of inactivity (scroll stop to hide)
+          // Schedule auto-reveal after 150ms of inactivity (scroll stop to show)
           scrollStopTimer = setTimeout(() => {
-            setHidden(true);
-          }, 1500);
+            setHidden(false);
+          }, 150); // Snappy 150ms delay to pop back up on scroll stop
         }
       }
 
-      // Defer layout updates to requestAnimationFrame for 120fps performance
+      // Synchronously record lastScrollY immediately to prevent state/frame update lag!
+      lastScrollY.current = currentScrollY;
+
+      // Defer aesthetic-only backdrop & height states to requestAnimationFrame for 120fps
       if (!ticking) {
         window.requestAnimationFrame(() => {
           setScrolled(window.scrollY > 20);
           setServicesOpen(false); // Smoothly collapse dropdown on scroll
-          lastScrollY.current = window.scrollY;
           ticking = false;
         });
         ticking = true;
@@ -283,7 +285,7 @@ const Navbar = () => {
                       className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
+                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
@@ -304,7 +306,7 @@ const Navbar = () => {
                   <svg className={`w-3.5 h-3.5 transition-transform duration-700 ${servicesOpen ? 'rotate-180 text-brand-gold' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
-                  <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isServicesActive ? "w-full" : "w-0 group-hover:w-full"}`} />
+                  <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isServicesActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </button>
 
                 <AnimatePresence>
@@ -351,7 +353,7 @@ const Navbar = () => {
                 >
                   <span className="tracking-[0.2em]">Bespoke</span>
                   <span className="text-brand-gold" style={{ letterSpacing: 'normal' }}>.</span>
-                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-brand-gold transition-all duration-500 ease-out group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-brand-gold group-hover:w-full"></span>
                 </button>
               </li>
 
@@ -365,7 +367,7 @@ const Navbar = () => {
                       className={`transition-colors duration-300 relative group py-2 magnetic ${active ? "text-brand-primary" : "text-white"} ${isActive ? "text-brand-gold" : "hover:text-brand-gold"}`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full transition-all duration-500 ease-[0.22, 1, 0.36, 1] ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
+                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-gold rounded-full ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} />
                     </a>
                   </li>
                 );
