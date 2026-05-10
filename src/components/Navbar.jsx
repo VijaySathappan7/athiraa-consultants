@@ -72,45 +72,47 @@ const Navbar = () => {
     sectionsRef.current = Array.from(document.querySelectorAll("section"));
   }, [location.pathname]);
 
-  // 1. SCROLL SENSING & DIRECTION (Optimized for 120fps with jitter-immune scroll-stop state machine)
+  // 1. SCROLL SENSING & DIRECTION (Optimized for 120fps with absolute scroll-state machine)
   useEffect(() => {
     let ticking = false;
     let scrollStopTimer = null;
-    let lastRegisteredScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const delta = Math.abs(currentScrollY - lastRegisteredScrollY);
+      const isAtTop = currentScrollY <= 50;
 
-      // Only clear and reset the timer if the scroll delta is significant (active user scrolling).
-      // If delta is tiny (inertia decay or micro-drifting), we allow the scheduled timer to fire.
-      const isSignificantScroll = delta > 1.2;
-
-      if (isSignificantScroll || currentScrollY <= 50) {
+      if (isAtTop) {
+        setHidden(false);
         if (scrollStopTimer) {
           clearTimeout(scrollStopTimer);
-        }
-      }
-
-      // Hide the navbar during active scroll
-      if (currentScrollY > 50) {
-        if (isSignificantScroll) {
-          setHidden(true);
-        }
-
-        // Schedule re-reveal after active scroll ceases
-        if (isSignificantScroll || !scrollStopTimer) {
-          scrollStopTimer = setTimeout(() => {
-            setHidden(false);
-          }, 200); // Snappy 200ms delay for instant perceived responsiveness
+          scrollStopTimer = null;
         }
       } else {
-        setHidden(false);
+        const diff = currentScrollY - lastScrollY.current;
+        const isSignificant = Math.abs(diff) > 1.5;
+
+        if (isSignificant) {
+          if (diff > 0) {
+            // Scrolling DOWN -> HIDE
+            setHidden(true);
+          } else {
+            // Scrolling UP -> SHOW
+            setHidden(false);
+          }
+
+          // Reset stop timer during active scrolling
+          if (scrollStopTimer) {
+            clearTimeout(scrollStopTimer);
+          }
+
+          // Schedule auto-hide after 1500ms of inactivity (scroll stop to hide)
+          scrollStopTimer = setTimeout(() => {
+            setHidden(true);
+          }, 1500);
+        }
       }
 
-      lastRegisteredScrollY = currentScrollY;
-
-      // Defer background layout styling updates to requestAnimationFrame for 120fps performance
+      // Defer layout updates to requestAnimationFrame for 120fps performance
       if (!ticking) {
         window.requestAnimationFrame(() => {
           setScrolled(window.scrollY > 20);
@@ -239,9 +241,9 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: (hidden && !menuOpen) ? -100 : 0 }}
-        transition={{ duration: 0.40, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ y: "-120%" }}
+        animate={{ y: (hidden && !menuOpen) ? "-120%" : "0%" }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed z-[100] top-0 left-0 w-full rounded-none px-6 md:px-12 py-1 transition-all duration-500 ease-out ${(menuOpen || isDrawerActive)
           ? isWhite
             ? "bg-white/80 backdrop-blur-[30px] border-b border-black/[0.04] h-[100dvh] lg:h-auto"
