@@ -139,7 +139,7 @@ const CorporateFinanceContent = () => {
             className="max-w-4xl xl:max-w-5xl"
           >
             <p className="text-[10px] tracking-[0.6em] uppercase text-brand-gold font-black mb-4">Corporate Advisory</p>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Institutional Finance <br />
               <span className="italic font-light text-brand-gold">Strategies.</span>
             </h2>
@@ -152,7 +152,7 @@ const CorporateFinanceContent = () => {
             transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-md border-l border-brand-gold/30 pl-8 pb-2"
           >
-            <p className="text-[14px] md:text-base lg:text-lg text-brand-primary/70 font-light leading-relaxed">
+            <p className="text-[14px] xl:text-[16px] font-light text-brand-primary/70 leading-relaxed">
               Navigating the complexities of corporate growth with precision. From structured debt to equity lifecycle management, we provide the capital intelligence needed to scale in the Indian market.
             </p>
           </motion.div>
@@ -162,7 +162,7 @@ const CorporateFinanceContent = () => {
       {/* DESKTOP: GRID HUB */}
       <div className="hidden lg:block w-full container mx-auto px-6 xl:px-12 pb-12 z-10 relative">
         {/* Top 2 Cards */}
-        <div className="grid grid-cols-2 gap-8 mb-8 h-[390px] xl:h-[440px] transform-gpu">
+        <div className="grid grid-cols-2 gap-8 mb-10 items-stretch transform-gpu">
           {services.slice(0, 2).map((service, idx) => (
             <motion.div 
               key={`top-${service.num}`}
@@ -170,23 +170,25 @@ const CorporateFinanceContent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.70, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="flex h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition-all duration-700 border border-gray-100 group hover:-translate-y-2 magnetic"
+              className="flex bg-white rounded-[1.6rem] overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition-all duration-700 border border-gray-100 group hover:-translate-y-2 magnetic"
             >
-              <div className="w-[50%] h-full relative overflow-hidden shrink-0">
+              <div className="w-[42%] relative overflow-hidden shrink-0 self-stretch">
                 <ProgressiveImage src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-all duration-700"></div>
                 <div className="absolute top-6 left-6 z-10">
                   <span className="text-5xl font-playfair text-white opacity-20 font-black italic">{service.num}</span>
                 </div>
               </div>
-              <div className="w-[50%] p-6 xl:p-8 flex flex-col justify-center h-full">
-                <h3 className="text-2xl xl:text-3xl font-playfair font-bold text-brand-primary mb-3 leading-tight">
-                  {service.title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word} </span> : word + ' ')}
-                </h3>
-                <p className="text-[14px] xl:text-[16px] font-light text-brand-primary/80 leading-relaxed border-l-2 border-brand-gold/40 pl-4 mb-4 line-clamp-3">{service.desc}</p>
-                <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-brand-primary/5">
+              <div className="w-[58%] p-5 xl:p-6.5 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-lg xl:text-[22px] font-playfair font-bold text-brand-primary mb-2.5 leading-tight">
+                    {service.title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word} </span> : word + ' ')}
+                  </h3>
+                  <p className="text-xs xl:text-[13.5px] font-light text-brand-primary/80 leading-relaxed border-l-2 border-brand-gold/40 pl-4 mb-3.5">{service.desc}</p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-1.5 pt-3.5 border-t border-brand-primary/5">
                   {service.includes.map((item, i) => (
-                    <span key={i} className="px-4 py-1.5 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 text-[9px] xl:text-[10px] font-bold rounded-full uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all duration-500">{item}</span>
+                    <span key={i} className="px-3.5 py-1 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 text-[8px] xl:text-[9.5px] font-bold rounded-full uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all duration-500">{item}</span>
                   ))}
                 </div>
               </div>
@@ -195,7 +197,7 @@ const CorporateFinanceContent = () => {
         </div>
 
         {/* Bottom 3 Cards */}
-        <div className="grid grid-cols-3 gap-8 h-[550px] xl:h-[600px] transform-gpu">
+        <div className="grid grid-cols-3 gap-8 items-stretch transform-gpu">
           {services.slice(2, 5).map((service, idx) => (
             <motion.div 
               key={`bottom-${service.num}`}
@@ -203,23 +205,25 @@ const CorporateFinanceContent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.70, delay: 0.20 + idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition-all duration-700 border border-gray-100 group hover:-translate-y-2 magnetic"
+              className="flex flex-col bg-white rounded-[1.6rem] overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition-all duration-700 border border-gray-100 group hover:-translate-y-2 magnetic"
             >
-              <div className="w-full h-[220px] xl:h-[250px] relative overflow-hidden shrink-0">
+              <div className="w-full h-[150px] xl:h-[170px] relative overflow-hidden shrink-0">
                 <ProgressiveImage src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-all duration-700"></div>
                 <div className="absolute top-6 left-6 z-10">
                   <span className="text-5xl font-playfair text-white opacity-20 font-black italic">{service.num}</span>
                 </div>
               </div>
-              <div className="p-6 xl:p-8 flex flex-col flex-1 h-full">
-                <h3 className="text-xl xl:text-2xl font-playfair font-bold text-brand-primary mb-3 leading-tight">
-                  {service.title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word} </span> : word + ' ')}
-                </h3>
-                <p className="text-[14px] xl:text-[16px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/40 pl-4 mb-4 line-clamp-4">{service.desc}</p>
-                <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-brand-primary/5">
+              <div className="p-5 xl:p-6.5 flex flex-col flex-1 justify-between h-full">
+                <div>
+                  <h3 className="text-[17px] xl:text-[20px] font-playfair font-bold text-brand-primary mb-2.5 leading-tight">
+                    {service.title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word} </span> : word + ' ')}
+                  </h3>
+                  <p className="text-xs xl:text-[13.5px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/40 pl-4 mb-3.5">{service.desc}</p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-1.5 pt-3.5 border-t border-brand-primary/5">
                   {service.includes.map((item, i) => (
-                    <span key={i} className="px-4 py-1.5 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 text-[9px] xl:text-[10px] font-bold rounded-full uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all duration-500">{item}</span>
+                    <span key={i} className="px-3.5 py-1 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 text-[8px] xl:text-[9px] font-bold rounded-full uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all duration-500">{item}</span>
                   ))}
                 </div>
               </div>
@@ -250,7 +254,7 @@ const CorporateFinanceContent = () => {
           })}
         </div>
 
-        <div className="relative w-full min-h-[500px] rounded-[2rem] bg-white border border-gray-100 shadow-2xl overflow-hidden">
+        <div className="relative w-full min-h-[400px] rounded-[1.6rem] bg-white border border-gray-100 shadow-2xl overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -258,9 +262,20 @@ const CorporateFinanceContent = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1.05 }}
               transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
-              className="p-6 flex flex-col h-full"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, info) => {
+                const threshold = 50;
+                if (info.offset.x < -threshold) {
+                  handleManualSwitch((activeIndex + 1) % services.length);
+                } else if (info.offset.x > threshold) {
+                  handleManualSwitch((activeIndex - 1 + services.length) % services.length);
+                }
+              }}
+              className="p-5 flex flex-col h-full touch-pan-y cursor-grab active:cursor-grabbing select-none"
             >
-              <div className="w-full h-56 rounded-2xl overflow-hidden relative mb-6 shadow-lg shrink-0">
+              <div className="w-full h-[179px] rounded-2xl overflow-hidden relative mb-5 shadow-lg shrink-0">
                 <ProgressiveImage src={services[activeIndex].image} alt={services[activeIndex].title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute top-4 right-4 z-10">
@@ -268,21 +283,21 @@ const CorporateFinanceContent = () => {
                 </div>
               </div>
 
-              <span className="text-brand-gold text-[9px] font-black tracking-[0.5em] uppercase mb-1.5 block">Service Focal</span>
-              <h3 className="text-2xl font-playfair font-bold text-brand-primary mb-3 leading-tight">
+              <span className="text-brand-gold text-[7px] font-black tracking-[0.5em] uppercase mb-1 block">Service Focal</span>
+              <h3 className="text-xl font-playfair font-bold text-brand-primary mb-2.5 leading-tight">
                 {services[activeIndex].title.split(' ').map((word, i, arr) => 
                   i === arr.length - 1 
                     ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span> 
                     : word + ' '
                 )}
               </h3>
-              <p className="text-[14px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-4 mb-4">
+              <p className="text-[11px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-4 mb-3.5">
                 {services[activeIndex].desc}
               </p>
 
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-brand-primary/5 mt-auto">
+              <div className="flex flex-wrap gap-1.5 pt-3.5 border-t border-brand-primary/5 mt-auto">
                 {services[activeIndex].includes.map((item) => (
-                  <span key={item} className="text-[9px] xl:text-[10px] uppercase tracking-widest px-4 py-1.5 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/70 rounded-full font-bold">
+                  <span key={item} className="text-[7px] xl:text-[8px] uppercase tracking-widest px-3.5 py-1 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/70 rounded-full font-bold">
                     {item}
                   </span>
                 ))}

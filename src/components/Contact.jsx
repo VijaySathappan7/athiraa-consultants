@@ -102,7 +102,7 @@ const Contact = () => {
         <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 items-center justify-between">
           
           {/* LEFT: Contact Info */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center">
+          <div className="w-full lg:w-[50%] flex flex-col justify-center">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ const Contact = () => {
                 <p className="text-[10px] md:text-xs tracking-[0.7em] uppercase text-brand-gold font-black">Get In Touch</p>
               </div>
               
-              <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-white leading-[1.15] tracking-tight mb-8 md:mb-10">
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.15] tracking-tight mb-8 md:mb-10">
                 Connect With Our <br />
                 <span className="italic font-light text-brand-gold relative">
                   Advisory Team.
@@ -124,7 +124,7 @@ const Contact = () => {
                 </span>
               </h2>
               
-              <p className="text-white/70 font-light leading-relaxed font-light text-base lg:text-lg mb-16 max-w-md">
+              <p className="text-white/70 font-light leading-relaxed text-base lg:text-lg mb-16 max-w-md">
                 Whether you need help with wealth management, corporate finance, tax planning, or real estate — our team is here to guide you with honest, practical advice.
               </p>
             </motion.div>
@@ -159,7 +159,7 @@ const Contact = () => {
           </div>
 
           {/* RIGHT: Form */}
-          <div className="w-full lg:w-[50%] flex flex-col justify-center">
+          <div className="w-full lg:w-[42%] flex flex-col justify-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 40 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -167,9 +167,9 @@ const Contact = () => {
               transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
               className="w-full relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-brand-gold/20 via-white/10 to-brand-gold/20 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-600 pointer-events-none"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-brand-gold/30 via-white/5 to-brand-gold/30 rounded-[2.5rem] blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-600 pointer-events-none"></div>
               
-              <div className="bg-[#050505]/40 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 p-8 md:p-14 relative shadow-[0_40px_100px_rgba(0,0,0,0.8)] overflow-hidden">
+              <div className="bg-[#0b0a09]/80 backdrop-blur-3xl rounded-[2rem] border-t-2 border-t-brand-gold border-x border-b border-white/10 p-5 md:p-8 xl:p-9.5 relative shadow-[0_40px_100px_rgba(0,0,0,0.85)] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
                 
                 <AnimatePresence mode="wait">
@@ -179,7 +179,7 @@ const Contact = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 1.1 }}
-                      className="flex flex-col items-center justify-center py-20 text-center"
+                      className="flex flex-col items-center justify-center py-12 text-center"
                     >
                       <div className="w-24 h-24 bg-brand-gold/10 rounded-full flex items-center justify-center mb-8 relative">
                         <motion.div 
@@ -197,17 +197,17 @@ const Contact = () => {
                         ></motion.div>
                       </div>
                       <h3 className="text-3xl font-playfair text-white mb-4">Message Sent.</h3>
-                      <p className="text-white/70 font-light font-light max-w-xs mx-auto">We've received your inquiry and our advisory team will contact you shortly.</p>
+                      <p className="text-white/70 font-light max-w-xs mx-auto">We've received your inquiry and our advisory team will contact you shortly.</p>
                     </motion.div>
                   ) : (
                     <motion.form 
                       key="form"
                       initial={{ opacity: 1 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className="relative z-10 flex flex-col gap-12"
+                      className="relative z-10 flex flex-col gap-6.5"
                       onSubmit={handleSubmit}
                     >
-                      <div className="grid sm:grid-cols-2 gap-12 transform-gpu">
+                      <div className="grid sm:grid-cols-2 gap-6 transform-gpu">
                         {[
                           { name: "name", label: "Full Name", type: "text" },
                           { name: "email", label: "Email Address", type: "email" }
@@ -220,10 +220,10 @@ const Contact = () => {
                               value={formData[field.name]}
                               onChange={handleInputChange}
                               required 
-                              className={`w-full bg-transparent border-b transition-colors duration-500 px-0 py-3 text-white placeholder:text-transparent focus:outline-none peer text-base font-light ${errors[field.name] ? 'border-red-500/50' : 'border-white/10 group-hover/input:border-white/30 focus:border-brand-gold'}`} 
+                              className={`w-full bg-transparent border-b transition-colors duration-500 px-0 py-2.5 text-white placeholder:text-transparent focus:outline-none peer text-sm font-light ${errors[field.name] ? 'border-red-500/50' : 'border-white/10 group-hover/input:border-white/30 focus:border-brand-gold'}`} 
                               placeholder={field.label} 
                             />
-                            <label htmlFor={`contact-${field.name}`} className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData[field.name] ? '-top-5 text-[10px] text-white/50' : 'top-3 text-sm text-white/60 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-brand-gold'}`}>
+                            <label htmlFor={`contact-${field.name}`} className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData[field.name] ? '-top-4 text-[9.5px] text-white/50' : 'top-2.5 text-[13px] text-white/60 peer-focus:-top-4 peer-focus:text-[9.5px] peer-focus:text-brand-gold'}`}>
                               {field.label}
                             </label>
                             {errors[field.name] && <span className="absolute left-0 -bottom-5 text-[9px] text-red-500 font-bold uppercase tracking-tighter">{errors[field.name]}</span>}
@@ -238,10 +238,10 @@ const Contact = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full bg-transparent border-b border-white/10 group-hover/input:border-white/30 focus:border-brand-gold transition-colors duration-500 px-0 py-3 text-white placeholder:text-transparent focus:outline-none peer text-base font-light" 
+                          className="w-full bg-transparent border-b border-white/10 group-hover/input:border-white/30 focus:border-brand-gold transition-colors duration-500 px-0 py-2.5 text-white placeholder:text-transparent focus:outline-none peer text-sm font-light" 
                           placeholder="Phone Number" 
                         />
-                        <label htmlFor="contact-phone" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.phone ? '-top-5 text-[10px] text-white/50' : 'top-3 text-sm text-white/60 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-brand-gold'}`}>
+                        <label htmlFor="contact-phone" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.phone ? '-top-4 text-[9.5px] text-white/50' : 'top-2.5 text-[13px] text-white/60 peer-focus:-top-4 peer-focus:text-[9.5px] peer-focus:text-brand-gold'}`}>
                           Phone Number
                         </label>
                       </div>
@@ -253,13 +253,13 @@ const Contact = () => {
                           role="button"
                           aria-haspopup="listbox"
                           aria-expanded={dropdownOpen}
-                          className={`w-full bg-transparent border-b transition-all duration-500 px-0 py-3 text-base font-light cursor-pointer flex items-center justify-between relative ${errors.division ? 'border-red-500/50' : dropdownOpen ? 'border-brand-gold' : 'border-white/10 hover:border-white/30'}`}
+                          className={`w-full bg-transparent border-b transition-all duration-500 px-0 py-2.5 text-sm font-light cursor-pointer flex items-center justify-between relative ${errors.division ? 'border-red-500/50' : dropdownOpen ? 'border-brand-gold' : 'border-white/10 hover:border-white/30'}`}
                           onClick={() => setDropdownOpen(!dropdownOpen)}
                         >
                           <span className={`transition-all duration-300 ${formData.division ? 'opacity-100 text-white' : 'opacity-0'}`}>
                             {formData.division ? divisions.find(d => d.id === formData.division)?.label : ''}
                           </span>
-                          <label htmlFor="contact-division" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.division || dropdownOpen ? '-top-5 text-[10px] ' + (dropdownOpen ? 'text-brand-gold' : 'text-white/50') : 'top-3 text-sm text-white/60'}`}>
+                          <label htmlFor="contact-division" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.division || dropdownOpen ? '-top-4 text-[9.5px] ' + (dropdownOpen ? 'text-brand-gold' : 'text-white/50') : 'top-2.5 text-[13px] text-white/60'}`}>
                             Service Category
                           </label>
                           <motion.svg animate={{ rotate: dropdownOpen ? 180 : 0 }} transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }} width="12" height="8" viewBox="0 0 12 8" fill="none" className={dropdownOpen ? 'text-brand-gold' : 'text-white/20'}>
@@ -303,10 +303,10 @@ const Contact = () => {
                           onChange={handleInputChange}
                           required 
                           rows="3" 
-                          className={`w-full bg-transparent border-b transition-colors duration-500 px-0 py-3 text-white placeholder:text-transparent focus:outline-none peer text-base font-light resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10 group-hover/input:border-white/30 focus:border-brand-gold'}`} 
+                          className={`w-full bg-transparent border-b transition-colors duration-500 px-0 py-2.5 text-white placeholder:text-transparent focus:outline-none peer text-sm font-light resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10 group-hover/input:border-white/30 focus:border-brand-gold'}`} 
                           placeholder="Your Message"
                         ></textarea>
-                        <label htmlFor="contact-message" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.message ? '-top-5 text-[10px] text-white/50' : 'top-3 text-sm text-white/60 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-brand-gold'}`}>
+                        <label htmlFor="contact-message" className={`absolute left-0 transition-all uppercase tracking-widest pointer-events-none font-light ${formData.message ? '-top-4 text-[9.5px] text-white/50' : 'top-2.5 text-[13px] text-white/60 peer-focus:-top-4 peer-focus:text-[9.5px] peer-focus:text-brand-gold'}`}>
                           Consultation Brief
                         </label>
                         {errors.message && <span className="absolute left-0 -bottom-2 text-[9px] text-red-500 font-bold uppercase tracking-tighter">{errors.message}</span>}
@@ -315,9 +315,9 @@ const Contact = () => {
                       <button 
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full mt-6 py-5 rounded-2xl text-[11px] font-black tracking-[0.4em] uppercase transition-all duration-400 relative overflow-hidden group shadow-2xl ${isSubmitting ? 'bg-white/20 text-white cursor-not-allowed' : 'bg-white text-black hover:bg-brand-gold hover:text-white hover:-translate-y-1'}`}
+                        className={`w-full mt-3 py-3.5 rounded-xl text-[11px] font-black tracking-[0.4em] uppercase transition-all duration-400 relative overflow-hidden group shadow-2xl ${isSubmitting ? 'bg-[#1a1a1a] text-white/30 cursor-not-allowed' : 'bg-brand-gold text-white hover:bg-white hover:text-black hover:-translate-y-1'}`}
                       >
-                        <div className={`absolute inset-0 bg-brand-gold transform origin-left transition-transform duration-400 scale-x-0 group-hover:scale-x-100 -z-10`}></div>
+                        <div className={`absolute inset-0 bg-white transform origin-left transition-transform duration-400 scale-x-0 group-hover:scale-x-100 -z-10`}></div>
                         <span className="relative z-10 flex items-center justify-center gap-4">
                           {isSubmitting ? (
                             <>
@@ -327,7 +327,7 @@ const Contact = () => {
                           ) : (
                             <>
                               Request Consultation
-                              <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                              <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-500 text-white group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </>
                           )}
                         </span>

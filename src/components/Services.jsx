@@ -70,25 +70,25 @@ const TiltCard = ({ service, idx }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="group bg-white border border-brand-primary/10 rounded-[28px] flex flex-row overflow-hidden shadow-sm hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-700 relative perspective-1000"
+      className="group bg-white border border-brand-primary/10 rounded-[22px] flex flex-row items-stretch overflow-hidden shadow-sm hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-700 relative perspective-1000"
     >
-      <div className="w-[40%] aspect-[3/4] overflow-hidden bg-gray-50">
+      <div className="w-[32%] relative overflow-hidden bg-gray-50 self-stretch">
         <ProgressiveImage 
           src={service.image} 
           alt={service.title} 
           zoomOnScroll={false}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" 
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" 
           fetchPriority={idx < 2 ? "high" : "low"}
         />
       </div>
-      <div className="w-[60%] p-8 flex flex-col justify-between relative" style={{ transform: "translateZ(30px)" }}>
+      <div className="w-[68%] p-6 lg:p-7 flex flex-col justify-between relative" style={{ transform: "translateZ(30px)" }}>
         <div className="absolute inset-0 bg-glow-gold opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
         <div className="relative z-10">
-          <h3 className="text-2xl font-bold text-brand-primary font-playfair mb-3 group-hover:text-brand-gold transition-colors duration-500">{service.title}</h3>
-          <p className="text-sm text-brand-primary/70 font-light leading-relaxed mb-6">{service.description}</p>
-          <div className="space-y-3 mb-6">
+          <h3 className="text-xl lg:text-[22px] font-bold text-brand-primary font-playfair mb-2 lg:mb-3 group-hover:text-brand-gold transition-colors duration-500">{service.title}</h3>
+          <p className="text-xs lg:text-[13.5px] text-brand-primary/70 font-light leading-relaxed mb-4 lg:mb-5">{service.description}</p>
+          <div className="space-y-1.5 lg:space-y-2 mb-4 lg:mb-6">
             {service.points.map(p => (
-              <div key={p} className="flex items-center text-[10px] font-bold uppercase tracking-widest text-brand-primary/50">
+              <div key={p} className="flex items-center text-[8.5px] lg:text-[10px] font-bold uppercase tracking-widest text-brand-primary/50">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-gold mr-3 opacity-80"></span>
                 {p}
               </div>
@@ -101,7 +101,7 @@ const TiltCard = ({ service, idx }) => {
             whileHover={{ scale: 1.05, x: 5 }}
             whileTap={{ scale: 0.95 }}
             href="#contact" 
-            className="px-6 py-2.5 bg-brand-light text-brand-primary text-[10px] font-black uppercase tracking-[0.2em] rounded-full border border-brand-primary/20 hover:bg-brand-primary hover:text-white transition-all duration-500 shadow-sm magnetic"
+            className="px-6 py-2.5 bg-brand-light text-brand-primary text-[9.5px] lg:text-[10.5px] font-black uppercase tracking-[0.2em] rounded-full border border-brand-primary/20 hover:bg-brand-primary hover:text-white transition-all duration-500 shadow-sm magnetic"
           >
             Talk to Us
           </motion.a>
@@ -171,7 +171,7 @@ const Services = () => {
                 Our Expertise
               </p>
             </div>
-            <h2 className="text-[2.1rem] xs:text-[2.5rem] sm:text-4xl lg:text-6xl xl:text-[4.5rem] font-playfair text-brand-primary leading-[1.15] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.15] tracking-tight">
               Personalised <span className="italic font-light text-brand-gold">Guidance.</span> <br />
               Deep <span className="italic font-light text-brand-gold">Commitment.</span>
             </h2>
@@ -202,7 +202,7 @@ const Services = () => {
               <div className="w-12 h-[1px] bg-brand-gold"></div>
               <p className="text-[10px] tracking-[0.7em] uppercase text-brand-gold font-black">Our Expertise</p>
             </div>
-            <h2 className="text-[1.6rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-playfair text-brand-primary leading-[1.15] tracking-tight mb-6">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.15] tracking-tight mb-6">
               Personalised <span className="italic font-light text-brand-gold">Guidance.</span> <br />
               Deep <span className="italic font-light text-brand-gold">Commitment.</span>
             </h2>
@@ -234,7 +234,7 @@ const Services = () => {
             >
               {coreServices.map((service, idx) => (
                 <div key={idx} className="min-w-full px-1">
-                  <div className="bg-white border border-brand-primary/10 rounded-[24px] overflow-hidden shadow-sm">
+                  <div className="bg-white border border-brand-primary/10 rounded-[19px] overflow-hidden shadow-sm">
                     <div className="aspect-[3/2] bg-gray-50 overflow-hidden">
                       <ProgressiveImage 
                         src={service.image} 
@@ -243,15 +243,15 @@ const Services = () => {
                         fetchPriority={idx === 0 ? "high" : "low"}
                       />
                     </div>
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-2xl font-bold text-brand-primary font-playfair mb-1">{service.title}</h3>
-                        <img src={logo} alt="Logo" className="w-6 h-6 object-contain opacity-20 grayscale" />
+                    <div className="p-5 sm:p-6">
+                      <div className="flex justify-between items-start mb-3.5">
+                        <h3 className="text-xl sm:text-[22px] font-bold text-brand-primary font-playfair mb-1">{service.title}</h3>
+                        <img src={logo} alt="Logo" className="w-5 h-5 object-contain opacity-20 grayscale" />
                       </div>
-                      <p className="text-sm text-brand-primary/70 font-light leading-relaxed mb-5">{service.description}</p>
-                      <div className="space-y-2 mb-6">
+                      <p className="text-xs sm:text-[13.5px] text-brand-primary/70 font-light leading-relaxed mb-4">{service.description}</p>
+                      <div className="space-y-1.5 sm:space-y-2 mb-5 sm:mb-6">
                         {service.points.map(p => (
-                          <div key={p} className="flex items-center text-[10px] font-bold uppercase tracking-widest text-brand-primary/50">
+                          <div key={p} className="flex items-center text-[8.5px] sm:text-[10px] font-bold uppercase tracking-widest text-brand-primary/50">
                             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold mr-3 opacity-80"></span>
                             {p}
                           </div>
@@ -260,7 +260,7 @@ const Services = () => {
                       <motion.a 
                         whileTap={{ scale: 0.95 }}
                         href="#contact" 
-                        className="inline-block px-6 py-2.5 bg-brand-light text-brand-primary border border-brand-primary/20 text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-brand-primary hover:text-white transition-colors shadow-sm"
+                        className="inline-block px-6 py-2.5 bg-brand-light text-brand-primary border border-brand-primary/20 text-[9.5px] sm:text-[10.5px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-brand-primary hover:text-white transition-colors shadow-sm"
                       >
                         Talk to Us
                       </motion.a>

@@ -187,7 +187,7 @@ const Hero = () => {
               <div className="w-28 h-[1px] bg-brand-gold/40 hidden md:block"></div>
             </motion.div>
 
-            <h1 className="text-[2.75rem] xs:text-[3.25rem] sm:text-6xl lg:text-[3.8rem] xl:text-[4.25rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -205,7 +205,7 @@ const Hero = () => {
                 transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block"
               >
-                Wealth, Growth, and <span className="italic text-brand-gold/90 font-light">Legacy.</span>
+                Wealth and <span className="italic text-brand-gold/90 font-light">Growth.</span>
               </motion.span>
             </h1>
 
@@ -245,7 +245,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={contactLink.to}
                 onClick={(e) => handleHeroNav(e, contactLink)}
-                className="w-full sm:w-auto px-8 py-3.5 sm:px-14 sm:py-5 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
+                className="w-full sm:w-auto px-6 py-2.5 sm:px-11 sm:py-4 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
               >
                 Get Started
               </motion.a>
@@ -254,7 +254,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={servicesOverviewLink.to}
                 onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
-                className="w-full sm:w-auto px-8 py-3.5 sm:px-14 sm:py-5 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
+                className="w-full sm:w-auto px-6 py-2.5 sm:px-11 sm:py-4 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
               >
                 Learn More
               </motion.a>

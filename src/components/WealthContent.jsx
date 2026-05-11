@@ -60,11 +60,11 @@ const staggerContainerVariants = {
 
 const staggerItemVariants = {
   hidden: { opacity: 0, y: 15, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 120, damping: 18 } 
+    transition: { type: "spring", stiffness: 120, damping: 18 }
   }
 };
 
@@ -97,7 +97,7 @@ const WealthContent = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
@@ -125,23 +125,23 @@ const WealthContent = () => {
   };
 
   return (
-    <section 
+    <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      id="wealth-content" 
+      id="wealth-content"
       className="w-full bg-[#fcfdfe] flex flex-col justify-center overflow-hidden relative py-24 sm:py-24 lg:py-24 xl:py-28 scroll-mt-0"
     >
       {/* ── Premium Background ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-[60%] h-[60%] bg-brand-gold/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-0 w-[50%] h-[50%] bg-brand-primary/5 rounded-full blur-[120px]" />
-        
+
         {/* Spotlight */}
         <motion.div
           className="absolute w-[800px] h-[800px] rounded-full z-0 opacity-40 pointer-events-none -translate-x-1/2 -translate-y-1/2"
-          style={{ 
-            background: "radial-gradient(circle, rgba(184, 146, 64, 0.08) 0%, transparent 70%)", 
-            left: 0, 
+          style={{
+            background: "radial-gradient(circle, rgba(184, 146, 64, 0.08) 0%, transparent 70%)",
+            left: 0,
             top: 0,
             x: springX,
             y: springY
@@ -152,9 +152,9 @@ const WealthContent = () => {
       <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16 relative z-10">
         {/* DESKTOP HEADER */}
         <div className="hidden lg:flex w-full items-end justify-between mb-10 lg:mb-14 xl:mb-16 gap-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-4xl xl:max-w-5xl"
@@ -163,7 +163,7 @@ const WealthContent = () => {
               <div className="w-12 h-[1px] bg-brand-gold"></div>
               <p className="text-[10px] tracking-[0.5em] uppercase text-brand-gold font-black">Wealth Management</p>
             </div>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Strategic Wealth <br />
               <span className="italic font-light text-brand-gold">Planning.</span>
             </h2>
@@ -189,7 +189,7 @@ const WealthContent = () => {
               <div className="w-12 h-[1px] bg-brand-gold"></div>
               <p className="text-[10px] tracking-[0.5em] uppercase text-brand-gold font-black">Wealth Management</p>
             </div>
-            <h2 className="text-[2.25rem] xs:text-4xl sm:text-5xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Strategic Wealth <br />
               <span className="italic font-light text-brand-gold">Planning.</span>
             </h2>
@@ -200,12 +200,12 @@ const WealthContent = () => {
 
           {/* DESKTOP LEFT: IMAGE DISPLAY */}
           <div className="hidden lg:flex lg:w-[48%] flex-col gap-8 relative perspective-1000">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95, rotateY: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.80, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full aspect-[4/5] lg:aspect-auto lg:h-[70vh] min-h-[500px] rounded-[2.5rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.18)] border border-brand-gold/20 bg-slate-950 relative"
+              className="w-full aspect-[4/5] lg:aspect-auto lg:h-[58vh] min-h-[420px] rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.18)] border border-brand-gold/20 bg-slate-950 relative"
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -216,9 +216,9 @@ const WealthContent = () => {
                   transition={{ duration: 0.60, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0 w-full h-full"
                 >
-                  <ProgressiveImage 
-                    src={images[activeIndex]} 
-                    alt={topics[activeIndex].title} 
+                  <ProgressiveImage
+                    src={images[activeIndex]}
+                    alt={topics[activeIndex].title}
                     className="w-full h-full object-cover"
                     loading="eager"
                     fetchPriority="high"
@@ -234,20 +234,20 @@ const WealthContent = () => {
               </div>
 
               <div className="absolute bottom-12 left-12 right-12 z-10">
-                <motion.div 
+                <motion.div
                   key={activeIndex}
                   variants={staggerContainerVariants}
                   initial="hidden"
                   animate="visible"
-                  className="glass-premium bg-black/40 border-white/10 rounded-2xl p-8 shadow-2xl"
+                  className="glass-premium bg-black/40 border-white/10 rounded-xl p-6.5 shadow-2xl"
                 >
-                  <span className="text-[10px] tracking-[0.5em] uppercase text-brand-gold font-bold mb-4 block">Core Components</span>
-                  <div className="flex flex-wrap gap-2.5">
+                  <span className="text-[8px] tracking-[0.5em] uppercase text-brand-gold font-bold mb-3.5 block">Core Components</span>
+                  <div className="flex flex-wrap gap-2">
                     {topics[activeIndex].includes.map((inc, i) => (
-                      <motion.span 
-                        key={i} 
+                      <motion.span
+                        key={i}
                         variants={staggerItemVariants}
-                        className="text-[10px] font-bold tracking-widest text-white bg-white/10 border border-white/10 px-4 py-2 rounded-full uppercase transition-colors hover:bg-brand-gold hover:border-brand-gold"
+                        className="text-[8px] font-bold tracking-widest text-white bg-white/10 border border-white/10 px-3 py-1.5 rounded-full uppercase transition-colors hover:bg-brand-gold hover:border-brand-gold"
                       >
                         ✓ {inc}
                       </motion.span>
@@ -263,7 +263,7 @@ const WealthContent = () => {
                   key={activeIndex + autoPlay.toString()}
                   initial={{ width: "0%" }}
                   animate={{ width: autoPlay ? "100%" : "0%" }}
-                  transition={autoPlay ? { duration: 0.70, ease: [0.16, 1, 0.3, 1] } : { duration: 0.70 }}
+                  transition={autoPlay ? { duration: 7, ease: "linear" } : { duration: 0.3 }}
                   className="h-full bg-brand-gold rounded-full"
                 />
               </div>
@@ -271,7 +271,7 @@ const WealthContent = () => {
           </div>
 
           {/* DESKTOP RIGHT: ACCORDION */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -289,47 +289,45 @@ const WealthContent = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
                     animate={{
-                      height: isActive ? "auto" : 96
+                      height: isActive ? "auto" : 68
                     }}
                     transition={{
                       height: { duration: 0.70, ease: [0.16, 1, 0.3, 1] },
                       opacity: { duration: 0.70, delay: index * 0.1 },
                       y: { duration: 0.70, delay: index * 0.1 }
                     }}
-                    className={`relative cursor-pointer transition-colors duration-500 rounded-[2.5rem] py-7 px-8 border group overflow-hidden magnetic ${
-                      isActive 
-                        ? 'bg-white shadow-[0_30px_70px_-15px_rgba(0,0,0,0.08)] border-gray-100' 
+                    className={`relative cursor-pointer transition-colors duration-500 rounded-[1.6rem] py-4 px-5 border group overflow-hidden magnetic ${isActive
+                        ? 'bg-white shadow-[0_30px_70px_-15px_rgba(0,0,0,0.08)] border-gray-100'
                         : 'hover:bg-white/60 border-transparent hover:border-brand-gold/10 hover:shadow-2xl'
-                    }`}
+                      }`}
                   >
                     <div className="absolute inset-0 bg-glow-gold opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                    
-                    <div className="flex gap-8 items-start relative z-10">
+
+                    <div className="flex gap-6 items-start relative z-10">
                       <div className={`flex flex-col items-center pt-1 transition-all duration-700 ${isActive ? 'text-brand-gold scale-125' : 'text-brand-primary/20 group-hover:text-brand-gold/50'}`}>
-                        <span className="text-[10px] font-black tracking-tight mb-2">{item.id}</span>
-                        <div className={`w-[1px] transition-all duration-700 ${isActive ? 'bg-brand-gold h-14' : 'bg-brand-primary/10 h-8'}`}></div>
+                        <span className="text-[8px] font-black tracking-tight mb-1.5">{item.id}</span>
+                        <div className={`w-[1px] transition-all duration-700 ${isActive ? 'bg-brand-gold h-11' : 'bg-brand-primary/10 h-6.5'}`}></div>
                       </div>
 
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <h3 className={`font-playfair text-2xl xl:text-3xl font-bold transition-all duration-700 ${isActive ? 'text-brand-primary' : 'text-brand-primary/40 group-hover:text-brand-primary/70'}`}>
-                            {item.title.split(' ').map((word, i, arr) => 
-                              i === arr.length - 1 
-                                ? <span key={i} className={isActive ? "italic font-light text-brand-gold/90" : "group-hover:text-brand-gold/70"}>{word} </span> 
+                          <h3 className={`font-playfair text-lg xl:text-2xl font-bold transition-all duration-700 ${isActive ? 'text-brand-primary' : 'text-brand-primary/40 group-hover:text-brand-primary/70'}`}>
+                            {item.title.split(' ').map((word, i, arr) =>
+                              i === arr.length - 1
+                                ? <span key={i} className={isActive ? "italic font-light text-brand-gold/90" : "group-hover:text-brand-gold/70"}>{word} </span>
                                 : word + ' '
                             )}
                           </h3>
-                          <span className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-700 ${
-                            isActive 
-                              ? 'border-brand-gold text-brand-gold rotate-180 bg-brand-gold/5 shadow-inner' 
+                          <span className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-700 ${isActive
+                              ? 'border-brand-gold text-brand-gold rotate-180 bg-brand-gold/5 shadow-inner'
                               : 'border-brand-primary/10 text-brand-primary/30 group-hover:border-brand-gold/30 group-hover:text-brand-gold'
-                          }`}>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            }`}>
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                             </svg>
                           </span>
                         </div>
-                        
+
                         <AnimatePresence initial={false}>
                           {isActive && (
                             <motion.div
@@ -337,9 +335,9 @@ const WealthContent = () => {
                               animate={{ opacity: 1 }}
                               exit={{ opacity: 0 }}
                               transition={{ duration: 0.70 }}
-                              className="overflow-hidden mt-4"
+                              className="overflow-hidden mt-3.5"
                             >
-                              <p className="text-base xl:text-lg font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-6">
+                              <p className="text-[13px] xl:text-[14.5px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-5">
                                 {item.desc}
                               </p>
                             </motion.div>
@@ -362,37 +360,37 @@ const WealthContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.70, delay: index * 0.1 }}
-                className="relative overflow-hidden rounded-[3rem] bg-white border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] p-8"
+                className="relative overflow-hidden rounded-[2.4rem] bg-white border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] p-6.5"
               >
                 <div className="absolute -top-12 -left-12 w-32 h-32 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none" />
 
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <span className="text-xs font-black text-brand-gold tracking-widest bg-brand-gold/10 border border-brand-gold/20 px-4 py-1.5 rounded-full">{item.id}</span>
-                    <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-brand-primary/40">{item.subtitle}</span>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-black text-brand-gold tracking-widest bg-brand-gold/10 border border-brand-gold/20 px-3 py-1 rounded-full">{item.id}</span>
+                    <span className="text-[8px] tracking-[0.3em] uppercase font-bold text-brand-primary/40">{item.subtitle}</span>
                   </div>
                 </div>
 
-                <div className="w-full h-56 rounded-3xl overflow-hidden relative mb-7 shadow-2xl">
+                <div className="w-full h-[179px] rounded-2xl overflow-hidden relative mb-5.5 shadow-2xl">
                   <ProgressiveImage src={images[index]} alt={item.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
 
-                <h3 className="text-3xl font-playfair font-bold text-brand-primary mb-4 leading-tight">
-                  {item.title.split(' ').map((word, i, arr) => 
-                    i === arr.length - 1 
-                      ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span> 
+                <h3 className="text-[24px] font-playfair font-bold text-brand-primary mb-3.5 leading-tight">
+                  {item.title.split(' ').map((word, i, arr) =>
+                    i === arr.length - 1
+                      ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span>
                       : word + ' '
                   )}
                 </h3>
 
-                <p className="text-base font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-5 mb-8">
+                <p className="text-[13px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/30 pl-4 mb-6.5">
                   {item.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-brand-primary/5">
+                <div className="flex flex-wrap gap-1.5 pt-5 border-t border-brand-primary/5">
                   {item.includes.map((inc, i) => (
-                    <span key={i} className="text-[10px] uppercase tracking-widest px-4 py-2 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 rounded-full font-bold">
+                    <span key={i} className="text-[8px] uppercase tracking-widest px-3 py-1.5 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/80 rounded-full font-bold">
                       ✓ {inc}
                     </span>
                   ))}

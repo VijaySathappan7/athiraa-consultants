@@ -54,17 +54,26 @@ const scrollToSection = (sectionId, immediate = false, attempt = 0) => {
     return;
   }
 
+  const triggerActiveAnimation = () => {
+    section.classList.add('section-navigated-active');
+    setTimeout(() => {
+      section.classList.remove('section-navigated-active');
+    }, 1500);
+  };
+
   if (window.lenis) {
     window.lenis.scrollTo(section, {
       duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Luxurious exponential glide
-      offset: 0
+      offset: 0,
+      onComplete: triggerActiveAnimation
     });
     return;
   }
 
   if (immediate) {
     window.scrollTo(0, section.getBoundingClientRect().top + window.scrollY);
+    triggerActiveAnimation();
     return;
   }
 
@@ -86,6 +95,8 @@ const scrollToSection = (sectionId, immediate = false, attempt = 0) => {
 
     if (progress < 1) {
       requestAnimationFrame(step);
+    } else {
+      triggerActiveAnimation();
     }
   };
 
@@ -171,13 +182,13 @@ function AppContent() {
   useEffect(() => {
     if (showSplash) return;
 
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: !isTouch,
+      smoothWheel: true, // Universally enable smooth scroll for mouse/trackpad, even on hybrid laptops with touchscreens!
       wheelMultiplier: 1.0,
-      syncTouch: false, // Turn off touch syncing to enable ultra-smooth native momentum on mobile browsers
+      touchMultiplier: 1.5, // Natural sensitivity setting for touch scrolls
+      syncTouch: false, // Allows mobile and tablet browsers to run native, high-performance compositor-thread swipe scrolling
     });
 
     window.lenis = lenis;

@@ -185,7 +185,7 @@ const TaxContent = () => {
             className="max-w-4xl xl:max-w-5xl"
           >
             <p className="text-[10px] tracking-[0.5em] uppercase text-brand-gold font-black mb-4">Tax & Compliance Advisory</p>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Simplifying Complexity <br />
               with Clarity & <br />
               <span className="italic font-light text-brand-gold">Expertise.</span>
@@ -212,7 +212,7 @@ const TaxContent = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
-        className="hidden lg:flex container mx-auto px-6 md:px-12 h-[550px] xl:h-[650px] z-10 relative"
+        className="hidden lg:flex container mx-auto px-6 md:px-12 h-[460px] xl:h-[520px] z-10 relative"
       >
         <div className="flex w-full h-full gap-5">
           {taxServices.map((service, index) => {
@@ -225,7 +225,7 @@ const TaxContent = () => {
                   width: isActive ? '60%' : '10%',
                 }}
                 transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
-                className="relative h-full rounded-[3.5rem] overflow-hidden cursor-pointer flex shadow-2xl border border-white/5 group"
+                className="relative h-full rounded-[2.8rem] overflow-hidden cursor-pointer flex shadow-2xl border border-white/5 group"
               >
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <motion.div
@@ -238,7 +238,7 @@ const TaxContent = () => {
                   <div className={`absolute inset-0 transition-all duration-1000 ${isActive ? 'bg-gradient-to-t from-black via-black/40 to-transparent' : 'bg-black/50 group-hover:bg-black/35'}`}></div>
                 </div>
 
-                <div className="relative z-10 w-full h-full flex flex-col justify-end p-10 xl:p-14">
+                <div className="relative z-10 w-full h-full flex flex-col justify-end p-8 xl:p-10">
                   {/* INACTIVE STATE */}
                   <motion.div
                     animate={{
@@ -263,36 +263,36 @@ const TaxContent = () => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="w-full max-w-[460px] glass-premium bg-black/25 border-white/20 p-6 xl:p-8 rounded-[2.5rem] shadow-2xl"
+                        className="w-full max-w-[368px] glass-premium bg-black/25 border-white/20 p-5 xl:p-6.5 rounded-[2rem] shadow-2xl"
                       >
-                        <div className="flex items-center gap-6 mb-6">
-                          <span className="text-brand-gold font-playfair font-bold text-4xl leading-none italic opacity-60">{service.num}</span>
+                        <div className="flex items-center gap-5 mb-5">
+                          <span className="text-brand-gold font-playfair font-bold text-3xl leading-none italic opacity-60">{service.num}</span>
                           <div className="h-[1px] flex-1 bg-gradient-to-r from-brand-gold/50 to-transparent" />
                         </div>
 
-                        <h3 className="text-xl xl:text-2xl font-playfair font-bold text-white mb-4 leading-tight">
+                        <h3 className="text-[16px] xl:text-[19px] font-playfair font-bold text-white mb-3 leading-tight">
                           {renderTitle(service.title)}
                         </h3>
 
-                        <p className="text-sm xl:text-sm font-light text-white/85 leading-relaxed mb-6 border-l-2 border-brand-gold/50 pl-6">
+                        <p className="text-xs xl:text-xs font-light text-white/85 leading-relaxed mb-5 border-l-2 border-brand-gold/50 pl-5">
                           {service.desc}
                         </p>
 
-                        <div className="w-full h-1 bg-white/10 rounded-full mb-6 overflow-hidden relative">
+                        <div className="w-full h-1 bg-white/10 rounded-full mb-5 overflow-hidden relative">
                           <motion.div
-                            key={activeDesktopIndex}
+                            key={activeDesktopIndex + autoPlayDesktop.toString()}
                             initial={{ width: "0%" }}
                             animate={{ width: autoPlayDesktop ? "100%" : "0%" }}
-                            transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
+                            transition={autoPlayDesktop ? { duration: 5, ease: "linear" } : { duration: 0.3 }}
                             className="absolute top-0 left-0 h-full bg-brand-gold shadow-[0_0_15px_rgba(184,146,64,0.8)]"
                           />
                         </div>
 
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5">
                           {service.tags.map((tag, i) => (
                             <span
                               key={i}
-                              className="px-4 py-1.5 bg-white/5 border border-white/10 text-white/90 font-bold text-[9px] uppercase tracking-widest rounded-full hover:bg-brand-gold hover:border-brand-gold transition-all duration-500 cursor-default"
+                              className="px-3 py-1 bg-white/5 border border-white/10 text-white/90 font-bold text-[7px] uppercase tracking-widest rounded-full hover:bg-brand-gold hover:border-brand-gold transition-all duration-500 cursor-default"
                             >
                               {tag}
                             </span>
@@ -319,7 +319,7 @@ const TaxContent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
-              className={`relative overflow-hidden rounded-[2.5rem] border transition-all duration-700 bg-white ${
+              className={`relative overflow-hidden rounded-[2rem] border transition-all duration-700 bg-white ${
                 isOpen 
                   ? "border-brand-gold shadow-2xl" 
                   : "border-gray-100 shadow-xl"
@@ -327,19 +327,19 @@ const TaxContent = () => {
             >
               <button
                 onClick={() => setActiveIndex(isOpen ? -1 : index)}
-                className="w-full text-left p-8 flex items-center justify-between gap-4 select-none"
+                className="w-full text-left p-6.5 flex items-center justify-between gap-4 select-none"
               >
-                <div className="flex items-center gap-6">
-                  <span className={`text-2xl font-playfair font-bold transition-all duration-700 ${isOpen ? "text-brand-gold" : "text-brand-primary/20"}`}>
+                <div className="flex items-center gap-5">
+                  <span className={`text-xl font-playfair font-bold transition-all duration-700 ${isOpen ? "text-brand-gold" : "text-brand-primary/20"}`}>
                     {service.num}
                   </span>
-                  <div className={`h-6 w-[2px] ${isOpen ? "bg-brand-gold" : "bg-gray-100"}`} />
-                  <h3 className={`font-sans font-bold text-lg transition-all duration-700 ${isOpen ? "text-brand-primary" : "text-brand-primary/50"}`}>
+                  <div className={`h-5 w-[2px] ${isOpen ? "bg-brand-gold" : "bg-gray-100"}`} />
+                  <h3 className={`font-sans font-bold text-[14.5px] transition-all duration-700 ${isOpen ? "text-brand-primary" : "text-brand-primary/50"}`}>
                     {service.shortTitle}
                   </h3>
                 </div>
 
-                <span className={`w-10 h-10 rounded-2xl flex items-center justify-center border transition-all duration-700 ${
+                <span className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-700 ${
                   isOpen 
                     ? "border-brand-gold text-brand-gold rotate-180 bg-brand-gold/10" 
                     : "border-gray-100 text-brand-primary/30"
@@ -359,13 +359,13 @@ const TaxContent = () => {
                     transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-8 pb-10 pt-2 border-t border-gray-100 flex flex-col">
-                      <div className="w-full h-52 rounded-[2rem] overflow-hidden relative mb-8 shadow-2xl">
+                    <div className="px-6.5 pb-8 pt-1.5 border-t border-gray-100 flex flex-col">
+                      <div className="w-full h-[220px] rounded-[1.6rem] overflow-hidden relative mb-6.5 shadow-2xl">
                         <ProgressiveImage src={service.image} alt={service.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
 
-                      <h4 className="text-2xl font-playfair font-bold text-brand-primary mb-4 leading-tight">
+                      <h4 className="text-[19px] font-playfair font-bold text-brand-primary mb-3 leading-tight">
                         {service.title.split(' ').map((word, i, arr) => 
                           i === arr.length - 1 
                             ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span> 
@@ -373,13 +373,13 @@ const TaxContent = () => {
                         )}
                       </h4>
 
-                      <p className="text-base font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/40 pl-6 mb-8">
+                      <p className="text-[13px] font-light text-brand-primary/70 leading-relaxed border-l-2 border-brand-gold/40 pl-5 mb-6.5">
                         {service.desc}
                       </p>
 
-                      <div className="flex flex-wrap gap-2 pt-6 border-t border-brand-primary/5">
+                      <div className="flex flex-wrap gap-1.5 pt-5 border-t border-brand-primary/5">
                         {service.tags.map((tag, i) => (
-                          <span key={i} className="text-[10px] uppercase tracking-widest px-4 py-2 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/60 rounded-full font-bold">
+                          <span key={i} className="text-[8px] uppercase tracking-widest px-3 py-1.5 bg-brand-primary/[0.03] border border-brand-primary/5 text-brand-primary/60 rounded-full font-bold">
                             {tag}
                           </span>
                         ))}

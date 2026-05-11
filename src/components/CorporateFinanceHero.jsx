@@ -45,7 +45,7 @@ const CorporateFinanceHero = () => {
                 <div className="w-20 h-[1px] bg-brand-gold/40"></div>
               </div>
 
-              <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-playfair text-white leading-[1.05] tracking-tight mb-4 sm:mb-6 lg:mb-8">
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.05] tracking-tight mb-4 sm:mb-6 lg:mb-8">
                 Corporate Advisory & <br />
                 <span className="italic text-brand-gold/90 font-light">Solutions.</span>
               </h2>
@@ -59,7 +59,7 @@ const CorporateFinanceHero = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#corporate-content" 
-                  className="inline-block text-center px-8 py-3.5 sm:px-12 sm:py-5 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
+                  className="inline-block text-center px-6 py-2.5 sm:px-9 sm:py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
                 >
                   Explore Strategy
                 </motion.a>
@@ -67,7 +67,7 @@ const CorporateFinanceHero = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact" 
-                  className="inline-block text-center px-8 py-3.5 sm:px-12 sm:py-5 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
+                  className="inline-block text-center px-6 py-2.5 sm:px-9 sm:py-4 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
                 >
                   Book a Consultation
                 </motion.a>
@@ -97,15 +97,15 @@ const CorporateFinanceHero = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.8 }}
-                  className="relative overflow-hidden p-4 sm:p-6 md:p-8 xl:p-10 min-h-[100px] md:min-h-[190px] flex flex-col justify-center glass-premium rounded-[1.75rem] group will-change-transform"
+                  className="relative overflow-hidden p-3 sm:p-5 md:p-[25px] xl:p-8 min-h-[80px] md:min-h-[152px] flex flex-col justify-center glass-premium rounded-[1.4rem] group will-change-transform"
                 >
                   <div className="absolute -top-12 -left-12 w-40 h-40 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-all duration-700 pointer-events-none" />
                   
                   <div className="flex items-center justify-between mb-2 relative z-10">
-                    <h3 className="text-[15px] sm:text-sm md:text-base lg:text-lg font-montserrat font-bold uppercase tracking-[0.12em] text-white group-hover:text-white transition-colors duration-500 mb-1">{card.title}</h3>
-                    <span className="text-white/20 font-playfair font-black text-2xl sm:text-4xl group-hover:text-white/40 transition-all duration-500">{card.id}</span>
+                    <h3 className="text-[12px] sm:text-[11px] md:text-[13px] lg:text-sm font-montserrat font-bold uppercase tracking-[0.12em] text-white group-hover:text-white transition-colors duration-500 mb-1">{card.title}</h3>
+                    <span className="text-white/20 font-playfair font-black text-xl sm:text-3xl group-hover:text-white/40 transition-all duration-500">{card.id}</span>
                   </div>
-                  <p className="text-sm md:text-base font-light text-white/60 leading-relaxed group-hover:text-white/85 transition-colors duration-700 relative z-10">
+                  <p className="text-[11px] md:text-[13px] font-light text-white/60 leading-relaxed group-hover:text-white/85 transition-colors duration-700 relative z-10">
                     {card.text}
                   </p>
                 </motion.div>
@@ -124,7 +124,7 @@ const CorporateFinanceHero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#corporate-content" 
-                className="flex-1 text-center py-3.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black shadow-2xl"
+                className="flex-1 text-center py-2.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black shadow-2xl"
               >
                 Explore Strategy
               </motion.a>
@@ -132,7 +132,7 @@ const CorporateFinanceHero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact" 
-                className="flex-1 text-center py-3.5 px-2 border border-white/20 text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black backdrop-blur-md"
+                className="flex-1 text-center py-2.5 px-2 border border-white/20 text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black backdrop-blur-md"
               >
                 Consultation
               </motion.a>

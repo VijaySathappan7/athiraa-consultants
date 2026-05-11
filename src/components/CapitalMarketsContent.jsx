@@ -240,7 +240,7 @@ const CapitalMarketsContent = () => {
             className="max-w-4xl xl:max-w-5xl"
           >
             <p className="text-[10px] tracking-[0.5em] uppercase text-brand-gold font-black mb-4">Capital Markets & Debt</p>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Precision. Strategy. <br />
               Sustainable <br />
               <span className="italic font-light text-brand-gold">Growth.</span>
@@ -271,11 +271,11 @@ const CapitalMarketsContent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.70, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative flex flex-col h-[740px] xl:h-[800px] rounded-[2rem] overflow-hidden bg-[#1a1614] border border-white/5 shadow-2xl transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)] group hover:-translate-y-3 magnetic"
+              className="relative flex flex-col h-[512px] xl:h-[552px] rounded-[1.6rem] overflow-hidden bg-[#1a1614] border border-white/5 shadow-2xl transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)] group hover:-translate-y-3 magnetic"
             >
               <div className="absolute inset-0 bg-glow-gold opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
-              <div className="w-full h-[460px] xl:h-[500px] overflow-hidden relative z-0">
+              <div className="w-full h-[296px] xl:h-[320px] overflow-hidden relative z-0">
                 <ProgressiveImage
                   src={service.image}
                   alt={service.title}
@@ -289,11 +289,11 @@ const CapitalMarketsContent = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-4 left-6 right-6 z-30 flex flex-wrap gap-2">
+                <div className="absolute bottom-4 left-6 right-6 z-30 flex flex-wrap gap-1.5">
                   {service.includes.slice(0, 3).map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 text-white/95 font-bold text-[8px] xl:text-[9px] uppercase tracking-widest rounded-full shadow-lg hover:bg-brand-gold hover:border-brand-gold transition-all duration-500 cursor-default"
+                      className="px-2.5 py-1 bg-white/10 backdrop-blur-md border border-white/10 text-white/95 font-bold text-[6.5px] xl:text-[7.5px] uppercase tracking-widest rounded-full shadow-lg hover:bg-brand-gold hover:border-brand-gold transition-all duration-500 cursor-default"
                     >
                       {item}
                     </span>
@@ -301,12 +301,12 @@ const CapitalMarketsContent = () => {
                 </div>
               </div>
 
-              <div className="flex-1 p-6 xl:p-8 flex flex-col justify-start gap-4 relative z-30 border-t border-white/5 bg-[#1a1614]">
-                <h3 className="text-xl xl:text-2xl font-playfair font-bold text-white leading-tight">
+              <div className="flex-1 p-4 xl:p-5.5 flex flex-col justify-start gap-3.5 relative z-30 border-t border-white/5 bg-[#1a1614]">
+                <h3 className="text-[16px] xl:text-[19px] font-playfair font-bold text-white leading-tight">
                   {renderTitle(service.title)}
                 </h3>
 
-                <p className="text-[14px] xl:text-[16px] font-light text-white/80 leading-relaxed border-l-2 border-brand-gold/30 pl-4">
+                <p className="text-[11px] xl:text-[13px] font-light text-white/80 leading-relaxed border-l-2 border-brand-gold/30 pl-4">
                   {service.desc}
                 </p>
 
@@ -321,7 +321,7 @@ const CapitalMarketsContent = () => {
 
       {/* MOBILE ONLY: Slider */}
       <div className="lg:hidden container mx-auto px-6 pb-16 z-10 relative">
-        <div className="relative h-[580px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100">
+        <div className="relative h-[464px] w-full rounded-[1.6rem] overflow-hidden shadow-2xl border border-gray-100">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={activeIndex}
@@ -335,7 +335,7 @@ const CapitalMarketsContent = () => {
               <ProgressiveImage src={services[activeIndex].image} className="w-full h-full object-cover" alt={services[activeIndex].title} />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+              <div className="absolute inset-0 p-5 md:p-6.5 flex flex-col justify-end">
                 <motion.div
                   custom={direction}
                   variants={textVariants}
@@ -343,10 +343,10 @@ const CapitalMarketsContent = () => {
                   animate="center"
                   exit="exit"
                 >
-                  <h3 className="text-4xl font-playfair font-bold text-white mb-6 leading-tight">
+                  <h3 className="text-3xl font-playfair font-bold text-white mb-5 leading-tight">
                     {services[activeIndex].title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span> : word + ' ')}
                   </h3>
-                  <p className="text-sm font-light text-white/85 leading-relaxed pl-6 border-l-2 border-brand-gold/40 mb-8">
+                  <p className="text-xs font-light text-white/85 leading-relaxed pl-5 border-l-2 border-brand-gold/40 mb-6.5">
                     {services[activeIndex].desc}
                   </p>
 
@@ -354,13 +354,13 @@ const CapitalMarketsContent = () => {
                     variants={staggerContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap gap-2 pt-6 border-t border-white/10"
+                    className="flex flex-wrap gap-1.5 pt-5 border-t border-white/10"
                   >
                     {services[activeIndex].includes.map((tag, i) => (
                       <motion.span 
                         key={i} 
                         variants={staggerItemVariants}
-                        className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-white/15 text-white/90 rounded-full bg-white/5 font-bold"
+                        className="text-[8px] uppercase tracking-widest px-2.5 py-1 border border-white/15 text-white/90 rounded-full bg-white/5 font-bold"
                       >
                         {tag}
                       </motion.span>
@@ -400,10 +400,10 @@ const CapitalMarketsContent = () => {
             >
               {activeIndex === i && (
                 <motion.div
-                  key={activeIndex}
+                  key={activeIndex + autoPlay.toString()}
                   initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
+                  animate={{ width: autoPlay ? "100%" : "0%" }}
+                  transition={autoPlay ? { duration: 5, ease: "linear" } : { duration: 0.3 }}
                   className="absolute inset-y-0 left-0 bg-brand-gold rounded-full"
                 />
               )}

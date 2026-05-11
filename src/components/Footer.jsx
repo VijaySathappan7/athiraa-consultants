@@ -203,30 +203,30 @@ const Footer = () => {
     e.preventDefault();
 
     if (location.pathname !== link.to) {
-      navigate(link.to);
+      navigate(link.to + '#' + link.sectionId);
+    } else {
+      setTimeout(() => {
+        window.scrollToSection?.(link.sectionId);
+      }, 100);
     }
-
-    setTimeout(() => {
-      window.scrollToSection?.(link.sectionId);
-    }, 50);
   };
 
   const homeLink = mainLinks[0];
 
   return (
-    <footer className="bg-black pt-24 pb-12 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-black pt-16 pb-10 relative overflow-hidden border-t border-white/5">
       {/* Decorative Gradient Background */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-20 transform-gpu">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12 transform-gpu">
           
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a
               href={homeLink.to}
               onClick={(e) => handleFooterNav(e, homeLink)}
-              className="flex items-center gap-4 mb-8 w-fit"
+              className="flex items-center gap-4 mb-5 w-fit"
             >
               <img src={logo} alt="Athiraa Logo" className="w-12 h-12 object-contain" />
               <div>
@@ -234,7 +234,7 @@ const Footer = () => {
                 <p className="text-brand-gold text-[10px] tracking-[0.4em] uppercase font-bold">Consultants</p>
               </div>
             </a>
-            <p className="text-white/50 font-light leading-relaxed max-w-sm mb-10 text-[11px]">
+            <p className="text-white/50 font-light leading-relaxed max-w-sm mb-6 text-[11px]">
               Personalised advisory for wealth creation, growth, and legacy. We combine deep knowledge with strategic clarity to build your financial future.
             </p>
             <div className="flex gap-6">
@@ -250,15 +250,15 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
+ 
           {/* Links Columns */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white font-montserrat font-bold text-[11px] tracking-widest uppercase mb-8 flex items-center gap-3">
+              <h4 className="text-white font-montserrat font-bold text-[11px] tracking-widest uppercase mb-5 flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
                 {section.title}
               </h4>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-2.5">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {section.title === "Legal" ? (
@@ -282,7 +282,7 @@ const Footer = () => {
               </ul>
             </div>
           ))}
-
+ 
         </div>
 
         {/* Bottom Bar */}
@@ -319,7 +319,7 @@ const Footer = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 30 }}
                 transition={{ type: "spring", stiffness: 220, damping: 25 }}
-                className={`relative ${legalContent[activeModal].sizeClass} bg-black/75 backdrop-blur-[30px] border border-brand-gold/20 rounded-3xl overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] flex flex-col z-20`}
+                className={`relative ${legalContent[activeModal].sizeClass} bg-black/75 backdrop-blur-[30px] border-[0.5px] border-brand-gold/25 rounded-2xl overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] flex flex-col z-20`}
               >
                 {/* Real Wood & Linen Texture Overlays */}
                 <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')] z-20" />
@@ -354,7 +354,10 @@ const Footer = () => {
                 </div>
 
                 {/* Scrollable Document Content */}
-                <div className="flex-1 overflow-y-auto p-6 md:p-10 space-y-8 md:space-y-10 relative z-30 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                <div 
+                  className="flex-1 overflow-y-auto p-6 md:p-10 space-y-8 md:space-y-10 relative z-30 custom-scrollbar"
+                  data-lenis-prevent="true"
+                >
                   {legalContent[activeModal].sections.map((sec, idx) => (
                     <div key={idx} className="space-y-4">
                       <h4 className="text-sm md:text-base font-montserrat font-bold text-white tracking-widest uppercase border-l-2 border-brand-gold pl-4">

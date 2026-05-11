@@ -64,7 +64,7 @@ const Expertise = () => {
             <div className="w-16 h-[1px] bg-gradient-to-l from-transparent via-brand-gold/50 to-brand-gold"></div>
           </div>
           
-          <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-7xl xl:text-8xl font-playfair text-brand-primary leading-[1.05] tracking-tight mb-8">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.05] tracking-tight mb-8">
             Deep Knowledge. Clear <br />
             <span className="italic font-light text-brand-gold">Vision.</span>
           </h2>

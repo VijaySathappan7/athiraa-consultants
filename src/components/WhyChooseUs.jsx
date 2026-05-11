@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
                 <div className="w-20 h-[1px] bg-brand-gold/40"></div>
               </div>
 
-              <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-playfair text-white leading-[1.05] tracking-tight mb-6 lg:mb-8">
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.05] tracking-tight mb-6 lg:mb-8">
                 Built on Trust, <br />
                 Driven by <span className="italic text-brand-gold/90 font-light">Vision.</span>
               </h2>
@@ -120,22 +120,22 @@ const WhyChooseUs = () => {
                 We combine deep expertise with a personalised approach to deliver financial solutions that are practical, transparent, and designed to last across generations.
               </p>
 
-              <div className="hidden lg:flex flex-col sm:flex-row gap-6 xl:gap-8">
+              <div className="hidden lg:flex flex-row gap-6 xl:gap-8">
                 <motion.a 
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#services" 
-                  className="inline-block text-center px-12 py-5 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
+                  className="inline-block text-center px-9 py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
                 >
-                  Explore Services
+                  Services
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact" 
-                  className="inline-block text-center px-12 py-5 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
+                  className="inline-block text-center px-9 py-4 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
                 >
-                  Book a Consultation
+                  Get Consultation
                 </motion.a>
               </div>
             </motion.div>
@@ -164,19 +164,19 @@ const WhyChooseUs = () => {
                       damping: 22,
                       mass: 0.8
                     }}
-                    className="relative overflow-hidden p-6 sm:p-6 md:p-8 xl:p-10 min-h-[130px] sm:min-h-[180px] lg:min-h-[190px] xl:min-h-[210px] flex flex-col items-center justify-center text-center glass-premium rounded-[1.75rem] group will-change-transform"
+                    className="relative overflow-hidden p-5 sm:p-5 md:p-[25px] xl:p-8 min-h-[104px] sm:min-h-[144px] lg:min-h-[152px] xl:min-h-[168px] flex flex-col items-center justify-center text-center glass-premium rounded-[1.4rem] group will-change-transform"
                   >
                      {/* Embedded Glass Glow Sphere */}
                      <div className="absolute inset-0 bg-white/[0.01] group-hover:bg-white/[0.03] transition-all duration-700 pointer-events-none" />
 
                      <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                       <span className="text-brand-gold/80 font-playfair font-black text-2xl sm:text-3xl mb-1 group-hover:text-brand-gold transition-colors duration-500">
+                       <span className="text-brand-gold/80 font-playfair font-black text-xl sm:text-2xl mb-1 group-hover:text-brand-gold transition-colors duration-500">
                          {point.id}
                        </span>
-                       <h3 className="text-[15px] sm:text-sm md:text-base lg:text-lg font-montserrat font-bold uppercase tracking-[0.12em] text-white group-hover:text-brand-gold transition-colors duration-500 mb-1">
+                       <h3 className="text-[12px] sm:text-[11px] md:text-[13px] lg:text-sm font-montserrat font-bold uppercase tracking-[0.12em] text-white group-hover:text-brand-gold transition-colors duration-500 mb-1">
                          {point.title}
                        </h3>
-                       <p className="text-sm md:text-base font-light text-white/60 leading-relaxed group-hover:text-white/85 transition-colors duration-700 max-w-[90%]">
+                       <p className="text-[11px] md:text-[13px] font-light text-white/60 leading-relaxed group-hover:text-white/85 transition-colors duration-700 max-w-[90%]">
                          {point.desc}
                        </p>
                      </div>
@@ -184,7 +184,6 @@ const WhyChooseUs = () => {
                ))}
             </div>
 
-            {/* MOBILE ONLY ACTIONS (Below the cards on mobile/tablet) */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +197,7 @@ const WhyChooseUs = () => {
                 href="#services" 
                 className="flex-1 text-center py-3.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black shadow-2xl"
               >
-                Explore Services
+                Services
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -206,7 +205,7 @@ const WhyChooseUs = () => {
                 href="#contact" 
                 className="flex-1 text-center py-3.5 px-2 border border-white/20 text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black backdrop-blur-md"
               >
-                Consultation
+                Get Consultation
               </motion.a>
             </motion.div>
 

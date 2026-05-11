@@ -193,7 +193,7 @@ const RealEstateContent = () => {
             className="max-w-4xl xl:max-w-5xl"
           >
             <p className="text-[10px] tracking-[0.6em] uppercase text-brand-gold font-black mb-4">India Real Estate</p>
-            <h2 className="text-[2.5rem] xs:text-[2.85rem] sm:text-5xl lg:text-6xl xl:text-7xl font-playfair text-brand-primary leading-[1.1] tracking-tight">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-brand-primary leading-[1.1] tracking-tight">
               Integrated Property <br />
               <span className="italic font-light text-brand-gold">Solutions.</span>
             </h2>
@@ -206,7 +206,7 @@ const RealEstateContent = () => {
             transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-md border-l border-brand-gold/30 pl-8 pb-2"
           >
-            <p className="text-[14px] md:text-base lg:text-lg text-brand-primary/70 font-light leading-relaxed">
+            <p className="text-[14px] xl:text-[16px] font-light text-brand-primary/70 leading-relaxed">
               Premier advisory across India's elite residential, commercial, and industrial landscape. We navigate regulatory complexities to unlock maximum asset value.
             </p>
           </motion.div>
@@ -220,10 +220,10 @@ const RealEstateContent = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
-          className="flex w-full h-[780px] xl:h-[860px] bg-white rounded-[4rem] shadow-[0_50px_120px_-30px_rgba(0,0,0,0.15)] border border-gray-100 hover:border-brand-gold/20 overflow-hidden relative group/hub transition-all duration-1000 ease-out"
+          className="flex w-full h-[580px] xl:h-[640px] bg-white rounded-[3.2rem] shadow-[0_50px_120px_-30px_rgba(0,0,0,0.15)] border border-gray-100 hover:border-brand-gold/20 overflow-hidden relative group/hub transition-all duration-1000 ease-out"
         >
           {/* Navigation Panel */}
-          <div className="w-[30%] bg-[#1a1614] border-r border-white/5 p-12 flex flex-col justify-between relative z-20 overflow-hidden shadow-[inset_-20px_0_60px_rgba(0,0,0,0.5)]">
+          <div className="w-[30%] bg-[#1a1614] border-r border-white/5 p-[38px] flex flex-col justify-between relative z-20 overflow-hidden shadow-[inset_-20px_0_60px_rgba(0,0,0,0.5)]">
             <div className="absolute inset-0 opacity-[0.1] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')]" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/70 pointer-events-none" />
 
@@ -243,22 +243,22 @@ const RealEstateContent = () => {
                     <motion.button
                       key={index}
                       onClick={() => handleClick(index)}
-                      className="w-full text-left relative py-5 px-8 rounded-[2rem] transition-all duration-700 flex items-center gap-6 group/btn magnetic"
+                      className="w-full text-left relative py-4 px-6 rounded-[1.6rem] transition-all duration-700 flex items-center gap-5 group/btn magnetic"
                     >
                       {isActive && (
                         <motion.div
                           layoutId="active-hub-bg"
-                          className="absolute inset-0 bg-[#2d2825] backdrop-blur-3xl shadow-2xl border border-white/10 rounded-[2rem] -z-10"
+                          className="absolute inset-0 bg-[#2d2825] backdrop-blur-3xl shadow-2xl border border-white/10 rounded-[1.6rem] -z-10"
                           transition={{ type: "spring", stiffness: 200, damping: 25 }}
                         />
                       )}
 
-                      <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-700 ${isActive ? 'bg-brand-gold text-brand-primary shadow-2xl scale-110' : 'bg-white/5 text-white/30 group-hover/btn:bg-white/10 group-hover/btn:text-brand-gold group-hover/btn:scale-105'}`}>
+                      <div className={`flex items-center justify-center w-9.5 h-9.5 rounded-xl transition-all duration-700 ${isActive ? 'bg-brand-gold text-brand-primary shadow-2xl scale-110' : 'bg-white/5 text-white/30 group-hover/btn:bg-white/10 group-hover/btn:text-brand-gold group-hover/btn:scale-105'}`}>
                         {item.icon}
                       </div>
 
                       <div className="flex-1">
-                        <h5 className={`font-playfair text-xl font-bold transition-all duration-700 ${isActive ? 'text-white' : 'text-white/40 group-hover/btn:text-white/90'}`}>
+                        <h5 className={`font-playfair text-[16px] font-bold transition-all duration-700 ${isActive ? 'text-white' : 'text-white/40 group-hover/btn:text-white/90'}`}>
                           {item.title}
                         </h5>
                       </div>
@@ -278,10 +278,10 @@ const RealEstateContent = () => {
             <div className="relative z-10 pt-10 border-t border-white/10">
               <div className="h-1.5 w-full bg-black/50 rounded-full overflow-hidden shadow-inner">
                 <motion.div
-                  key={activeIndex}
+                  key={activeIndex + autoPlay.toString()}
                   initial={{ width: "0%" }}
                   animate={{ width: autoPlay ? "100%" : "0%" }}
-                  transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
+                  transition={autoPlay ? { duration: 7, ease: "linear" } : { duration: 0.3 }}
                   className="h-full bg-brand-gold shadow-[0_0_15px_rgba(184,146,64,0.8)]"
                 />
               </div>
@@ -320,23 +320,23 @@ const RealEstateContent = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 20, scale: 0.95 }}
                   transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute bottom-8 right-8 left-8 lg:left-auto lg:max-w-[460px] z-20 glass-premium bg-black/35 border-white/20 p-8 xl:p-10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between group/glass-panel transition-all duration-700"
+                  className="absolute bottom-6.5 right-6.5 left-6.5 lg:left-auto lg:max-w-[368px] z-20 glass-premium bg-black/35 border-white/20 p-5 xl:p-6 rounded-[2rem] shadow-2xl flex flex-col justify-between group/glass-panel transition-all duration-700"
                 >
                   <div className="relative z-10">
-                    <div className="flex justify-between items-center mb-6 xl:mb-8">
+                    <div className="flex justify-between items-center mb-5 xl:mb-6.5">
                       <motion.img 
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.70, delay: 0.20 }}
                         src={logo} 
                         alt="Athiraa Consultants" 
-                        className="h-10 w-auto object-contain" 
+                        className="h-8 w-auto object-contain" 
                       />
                       <motion.span 
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.70, delay: 0.20 }}
-                        className="text-3xl font-playfair font-black text-white/30 italic leading-none select-none"
+                        className="text-2xl font-playfair font-black text-white/30 italic leading-none select-none"
                       >
                         {solutions[activeIndex].num}
                       </motion.span>
@@ -346,7 +346,7 @@ const RealEstateContent = () => {
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
-                      className="text-2xl xl:text-3xl font-playfair font-bold text-white mb-4 leading-tight tracking-tight"
+                      className="text-lg xl:text-2xl font-playfair font-bold text-white mb-3 leading-tight tracking-tight"
                     >
                       {renderTitle(solutions[activeIndex].title)}
                     </motion.h3>
@@ -355,7 +355,7 @@ const RealEstateContent = () => {
                       initial={{ opacity: 0, x: -15 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.70, delay: 0.20, ease: [0.16, 1, 0.3, 1] }}
-                      className="text-sm xl:text-base font-light text-white/85 leading-relaxed border-l-2 border-brand-gold/50 pl-6 mb-8"
+                      className="text-[11px] xl:text-[13px] font-light text-white/85 leading-relaxed border-l-2 border-brand-gold/50 pl-5 mb-6.5"
                     >
                       {solutions[activeIndex].desc}
                     </motion.p>
@@ -364,13 +364,13 @@ const RealEstateContent = () => {
                       variants={staggerContainerVariants}
                       initial="hidden"
                       animate="visible"
-                      className="flex flex-wrap gap-2 pt-6 border-t border-white/10"
+                      className="flex flex-wrap gap-1.5 pt-5 border-t border-white/10"
                     >
                       {solutions[activeIndex].includes.map((tag, i) => (
                         <motion.span 
                           key={i} 
                           variants={staggerItemVariants}
-                          className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-white/15 text-white/80 rounded-full bg-white/5 font-semibold transition-colors hover:bg-brand-gold hover:border-brand-gold hover:text-brand-primary"
+                          className="text-[8px] uppercase tracking-widest px-2.5 py-1 border border-white/15 text-white/80 rounded-full bg-white/5 font-semibold transition-colors hover:bg-brand-gold hover:border-brand-gold hover:text-brand-primary"
                         >
                           {tag}
                         </motion.span>
@@ -386,7 +386,7 @@ const RealEstateContent = () => {
 
       {/* MOBILE: SLIDER */}
       <div className="lg:hidden container mx-auto px-6 pb-16 z-10 relative">
-        <div className="relative h-[520px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100">
+        <div className="relative h-[480px] w-full rounded-[1.6rem] overflow-hidden shadow-2xl border border-gray-100">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -394,21 +394,32 @@ const RealEstateContent = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.70 }}
-              className="absolute inset-0"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, info) => {
+                const threshold = 50;
+                if (info.offset.x < -threshold) {
+                  handleClick((activeIndex + 1) % solutions.length);
+                } else if (info.offset.x > threshold) {
+                  handleClick((activeIndex - 1 + solutions.length) % solutions.length);
+                }
+              }}
+              className="absolute inset-0 touch-pan-y cursor-grab active:cursor-grabbing select-none"
             >
               <ProgressiveImage src={solutions[activeIndex].image} className="w-full h-full object-cover" alt={solutions[activeIndex].title} />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+              <div className="absolute inset-0 p-5 md:p-6.5 flex flex-col justify-end">
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.20 }}
                 >
-                  <h3 className="text-4xl font-playfair font-bold text-white mb-6 leading-tight">
+                  <h3 className="text-3xl font-playfair font-bold text-white mb-5 leading-tight">
                     {solutions[activeIndex].title.split(' ').map((word, i, arr) => i === arr.length - 1 ? <span key={i} className="italic font-light text-brand-gold/90">{word}</span> : word + ' ')}
                   </h3>
-                  <p className="text-sm font-light text-white/85 leading-relaxed pl-6 border-l-2 border-brand-gold/40 mb-8">
+                  <p className="text-xs font-light text-white/85 leading-relaxed pl-5 border-l-2 border-brand-gold/40 mb-6.5">
                     {solutions[activeIndex].desc}
                   </p>
 
@@ -416,13 +427,13 @@ const RealEstateContent = () => {
                     variants={staggerContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap gap-2 pt-6 border-t border-white/10"
+                    className="flex flex-wrap gap-1.5 pt-5 border-t border-white/10"
                   >
                     {solutions[activeIndex].includes.map((tag, i) => (
                       <motion.span 
                         key={i} 
                         variants={staggerItemVariants}
-                        className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-white/15 text-white/90 rounded-full bg-white/5 font-bold"
+                        className="text-[8px] uppercase tracking-widest px-2.5 py-1 border border-white/15 text-white/90 rounded-full bg-white/5 font-bold"
                       >
                         {tag}
                       </motion.span>
@@ -458,10 +469,10 @@ const RealEstateContent = () => {
             >
               {activeIndex === i && (
                 <motion.div
-                  key={activeIndex}
+                  key={activeIndex + autoPlay.toString()}
                   initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.70, ease: [0.16, 1, 0.3, 1] }}
+                  animate={{ width: autoPlay ? "100%" : "0%" }}
+                  transition={autoPlay ? { duration: 7, ease: "linear" } : { duration: 0.3 }}
                   className="absolute inset-y-0 left-0 bg-brand-gold rounded-full"
                 />
               )}

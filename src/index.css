@@ -98,6 +98,7 @@
     scroll-padding-top: 0px;
     overscroll-behavior: none;
     text-rendering: optimizeLegibility;
+    -webkit-overflow-scrolling: touch; /* Kinetic touch momentum scrolling for iOS/macOS */
   }
 
   html,
@@ -113,21 +114,57 @@
 
   /* Premium Sleek Scrollbar */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 12px;
+    height: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #050505;
+    background: #0d0e12;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-brand-gold/30 rounded-full;
-    border: 1px solid transparent;
+    background: linear-gradient(180deg, rgba(201, 164, 76, 0.4) 0%, rgba(201, 164, 76, 0.8) 100%);
+    border-radius: 9999px;
+    border: 3px solid #0d0e12;
     background-clip: padding-box;
+    transition: background 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-brand-gold/60;
+    background: linear-gradient(180deg, rgba(201, 164, 76, 0.8) 0%, rgba(201, 164, 76, 1) 100%);
+    border-radius: 9999px;
+    border: 3px solid #0d0e12;
+    background-clip: padding-box;
+  }
+
+  .custom-scrollbar {
+    -webkit-overflow-scrolling: touch; /* Kinetic touch momentum scrolling for custom panels on mobile */
+    overscroll-behavior: contain;
+  }
+
+  /* Support for custom scrollbar in any scrollable element */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(201, 164, 76, 0.3) 0%, rgba(201, 164, 76, 0.6) 100%);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(201, 164, 76, 0.6) 0%, rgba(201, 164, 76, 0.9) 100%);
+  }
+
+  /* Firefox Support */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: rgba(201, 164, 76, 0.5) #0d0e12;
   }
 
   /* Selection Glow */
@@ -184,6 +221,20 @@
     .h-\[105vh\] {
       height: 105dvh !important;
     }
+  }
+
+  /* Premium section navigation highlight indicator */
+  .section-navigated-active {
+    animation: sectionNavHighlight 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes sectionNavHighlight {
+  0% {
+    filter: brightness(1.08) contrast(1.01);
+  }
+  100% {
+    filter: brightness(1) contrast(1);
   }
 }
 
