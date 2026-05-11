@@ -124,7 +124,7 @@ const RealEstateHero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#real-estate-content" 
-                className="flex-1 text-center py-2.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black shadow-2xl"
+                className="flex-1 flex items-center justify-center text-center py-2.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] pl-[0.25em] xs:pl-[0.35em] uppercase rounded-full font-black shadow-2xl"
               >
                 Explore Strategy
               </motion.a>
@@ -132,7 +132,7 @@ const RealEstateHero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact" 
-                className="flex-1 text-center py-2.5 px-2 border border-white/20 text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] uppercase rounded-full font-black backdrop-blur-md"
+                className="flex-1 flex items-center justify-center text-center py-2.5 px-2 border border-white/20 text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] pl-[0.25em] xs:pl-[0.35em] uppercase rounded-full font-black backdrop-blur-md"
               >
                 Consultation
               </motion.a>

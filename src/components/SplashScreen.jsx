@@ -50,7 +50,7 @@ const SplashScreen = ({ onAnimationEnd }) => {
             <span className="block w-[80px] md:w-[120px] h-[1.5px] bg-brand-gold" />
           </div>
 
-          <p className="text-[12px] tracking-[var(--spacing-brand-normal)] text-brand-muted font-medium uppercase font-montserrat">
+          <p className="text-[9px] xs:text-[10px] sm:text-[12px] tracking-[var(--spacing-brand-normal)] text-brand-muted font-medium uppercase font-montserrat">
             Built on trust. Driven by vision
           </p>
         </div>
