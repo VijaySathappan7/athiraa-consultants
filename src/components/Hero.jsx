@@ -125,7 +125,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[400px] xs:h-[460px] sm:h-[520px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[340px] xs:h-[390px] sm:h-[440px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
                 fetchPriority="high"
                 loading="eager"
               />
