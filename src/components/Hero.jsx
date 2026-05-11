@@ -170,6 +170,27 @@ const Hero = () => {
               "Prosperity begins with the right guidance."
             </p>
 
+            {/* MOBILE SCROLL INDICATOR AFTER QUOTE */}
+            <motion.div 
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: [0, 1, 0], y: [0, 6, 0] }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              className="mt-3 mb-1 lg:hidden flex flex-col items-center gap-1 cursor-pointer pointer-events-none"
+            >
+              <span className="text-[9px] tracking-[0.3em] uppercase text-brand-gold font-bold pl-[0.3em]">
+                Scroll
+              </span>
+              <svg 
+                className="w-4.5 h-4.5 text-brand-gold/80" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.5" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </motion.div>
+
             {/* Divider below Quote for desktop only */}
             <div className="w-16 h-[1px] bg-brand-gold/30 mx-auto mb-4 sm:mb-6 hidden lg:block"></div>
           </motion.div>
@@ -272,27 +293,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* MOBILE SCROLL INDICATOR */}
-      <motion.div 
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: [0, 1, 0], y: [0, 8, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 lg:hidden flex flex-col items-center gap-1 cursor-pointer pointer-events-none"
-      >
-        <span className="text-[9px] tracking-[0.3em] uppercase text-brand-gold font-bold pl-[0.3em]">
-          Scroll
-        </span>
-        <svg 
-          className="w-4.5 h-4.5 text-brand-gold/80" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2.5" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </motion.div>
     </section>
   );
 };
