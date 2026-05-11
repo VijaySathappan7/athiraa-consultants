@@ -105,7 +105,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-[40%] flex flex-col items-center justify-center order-1 lg:order-2 mt-4 lg:mt-0"
         >
@@ -134,7 +134,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 sm:mt-8 text-center max-w-lg px-4 flex flex-col items-center justify-center"
           >
@@ -169,7 +169,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-[60%] order-2 lg:order-1"
         >
@@ -177,7 +177,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="hidden lg:flex items-center justify-center lg:justify-start gap-6 mb-4 lg:mb-8"
             >
@@ -191,7 +191,7 @@ const Hero = () => {
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block"
               >
@@ -201,7 +201,7 @@ const Hero = () => {
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block"
               >
@@ -212,7 +212,7 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="text-[17px] xs:text-[18px] sm:text-xl xl:text-xl text-white/80 leading-relaxed mb-4 sm:mb-8 lg:mb-8 max-w-2xl font-light mx-auto lg:mx-0"
             >
@@ -222,7 +222,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center justify-center lg:justify-start text-white/70 font-light text-sm sm:text-xl mb-6 sm:mb-10 lg:mb-8 h-10 font-playfair"
             >
@@ -236,7 +236,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center lg:justify-start"
             >
