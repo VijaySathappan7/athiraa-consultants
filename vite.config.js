@@ -1,15 +1,14 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/',
   plugins: [react()],
+  base: '/',
   build: {
     target: 'esnext',
-    sourcemap: false,
-    cssMinify: true,
     cssCodeSplit: true,
-    chunkSizeWarningLimit: 1200,
+    sourcemap: false,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -23,4 +22,4 @@ export default defineConfig({
       }
     }
   }
-});
+})
