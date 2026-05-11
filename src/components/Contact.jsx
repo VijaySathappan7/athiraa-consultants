@@ -315,7 +315,7 @@ const Contact = () => {
                       <button 
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full mt-3 py-3.5 rounded-xl text-[11px] font-black tracking-[0.4em] uppercase transition-all duration-400 relative overflow-hidden group shadow-2xl ${isSubmitting ? 'bg-[#1a1a1a] text-white/30 cursor-not-allowed' : 'bg-brand-gold text-white hover:bg-white hover:text-black hover:-translate-y-1'}`}
+                        className={`w-full mt-3 lg:py-3 py-3.5 rounded-xl text-[11px] font-black tracking-[0.4em] uppercase transition-all duration-400 relative overflow-hidden group shadow-2xl ${isSubmitting ? 'bg-[#1a1a1a] text-white/30 cursor-not-allowed' : 'bg-brand-gold text-white hover:bg-white hover:text-black hover:-translate-y-1'}`}
                       >
                         <div className={`absolute inset-0 bg-white transform origin-left transition-transform duration-400 scale-x-0 group-hover:scale-x-100 -z-10`}></div>
                         <span className="relative z-10 flex items-center justify-center gap-4">

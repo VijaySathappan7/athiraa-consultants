@@ -7,14 +7,14 @@ import ganeshImage from '../assets/images/ganesh.webp';
 import logoImage from '../assets/images/logo.webp';
 const mainLinks = [
   { name: "Home", to: "/", sectionId: "hero" },
-  { name: "About", to: "/about", sectionId: "why-choose-us" },
-  { name: "Expertise", to: "/expertise", sectionId: "expertise" },
-  { name: "Contact", to: "/contact", sectionId: "contact" }
+  { name: "About", to: "/", sectionId: "why-choose-us" },
+  { name: "Expertise", to: "/", sectionId: "expertise" },
+  { name: "Contact", to: "/", sectionId: "contact" }
 ];
 
 const servicesOverviewLink = {
   name: "Services",
-  to: "/services",
+  to: "/",
   sectionId: "services"
 };
 
@@ -171,7 +171,7 @@ const Hero = () => {
             </p>
 
             {/* MOBILE SCROLL INDICATOR AFTER QUOTE */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: [0, 1, 0], y: [0, 6, 0] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
@@ -180,11 +180,11 @@ const Hero = () => {
               <span className="text-[12.5px] tracking-[0.4em] uppercase text-brand-gold font-bold pl-[0.4em]">
                 Scroll
               </span>
-              <svg 
-                className="w-[26px] h-[26px] text-brand-gold/90" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
+              <svg
+                className="w-[26px] h-[26px] text-brand-gold/90"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -276,7 +276,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={contactLink.to}
                 onClick={(e) => handleHeroNav(e, contactLink)}
-                className="w-full sm:w-auto px-6 py-2.5 sm:px-11 sm:py-4 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
+                className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
               >
                 Get Started
               </motion.a>
@@ -285,7 +285,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={servicesOverviewLink.to}
                 onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
-                className="w-full sm:w-auto px-6 py-2.5 sm:px-11 sm:py-4 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
+                className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
               >
                 Learn More
               </motion.a>

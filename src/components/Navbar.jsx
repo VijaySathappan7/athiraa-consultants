@@ -7,22 +7,22 @@ const BespokeModal = lazy(() => import("./BespokeModal"));
 
 const mainLinks = [
   { name: "Home", to: "/", sectionId: "hero" },
-  { name: "Expertise", to: "/expertise", sectionId: "expertise" },
-  { name: "About", to: "/about", sectionId: "why-choose-us" },
-  { name: "Contact", to: "/contact", sectionId: "contact" }
+  { name: "Expertise", to: "/", sectionId: "expertise" },
+  { name: "About", to: "/", sectionId: "why-choose-us" },
+  { name: "Contact", to: "/", sectionId: "contact" }
 ];
 
 const serviceLinks = [
-  { name: "Wealth Management", to: "/services/wealth-management", sectionId: "wealth-hero" },
-  { name: "Corporate Finance", to: "/services/corporate-finance", sectionId: "corporate-hero" },
-  { name: "Capital Markets", to: "/services/capital-markets", sectionId: "capital-markets-hero" },
-  { name: "Real Estate", to: "/services/real-estate", sectionId: "real-estate-hero" },
-  { name: "Tax Advisory", to: "/services/tax-advisory", sectionId: "tax-hero" }
+  { name: "Wealth Management", to: "/", sectionId: "wealth-hero" },
+  { name: "Corporate Finance", to: "/", sectionId: "corporate-hero" },
+  { name: "Capital Markets", to: "/", sectionId: "capital-markets-hero" },
+  { name: "Real Estate", to: "/", sectionId: "real-estate-hero" },
+  { name: "Tax Advisory", to: "/", sectionId: "tax-hero" }
 ];
 
 const servicesOverviewLink = {
   name: "Services",
-  to: "/services",
+  to: "/",
   sectionId: "services"
 };
 

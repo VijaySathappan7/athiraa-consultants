@@ -59,7 +59,7 @@ const CapitalMarketsHero = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#capital-markets-content" 
-                  className="inline-block text-center px-6 py-2.5 sm:px-9 sm:py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
+                  className="inline-block text-center px-6 py-2.5 lg:px-7 lg:py-3 sm:px-9 sm:py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
                 >
                   Explore Strategy
                 </motion.a>
@@ -67,7 +67,7 @@ const CapitalMarketsHero = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact" 
-                  className="inline-block text-center px-6 py-2.5 sm:px-9 sm:py-4 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
+                  className="inline-block text-center px-6 py-2.5 lg:px-7 lg:py-3 sm:px-9 sm:py-4 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 transition-all duration-500 backdrop-blur-md magnetic"
                 >
                   Book a Consultation
                 </motion.a>

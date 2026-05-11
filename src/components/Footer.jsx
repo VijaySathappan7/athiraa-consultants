@@ -6,22 +6,22 @@ import logo from '../assets/images/logo.webp';
 
 const mainLinks = [
   { name: "Home", to: "/", sectionId: "hero" },
-  { name: "About", to: "/about", sectionId: "why-choose-us" },
-  { name: "Expertise", to: "/expertise", sectionId: "expertise" },
-  { name: "Contact", to: "/contact", sectionId: "contact" }
+  { name: "About", to: "/", sectionId: "why-choose-us" },
+  { name: "Expertise", to: "/", sectionId: "expertise" },
+  { name: "Contact", to: "/", sectionId: "contact" }
 ];
 
 const serviceLinks = [
-  { name: "Wealth Management", to: "/services/wealth-management", sectionId: "wealth-hero" },
-  { name: "Corporate Finance", to: "/services/corporate-finance", sectionId: "corporate-hero" },
-  { name: "Capital Markets", to: "/services/capital-markets", sectionId: "capital-markets-hero" },
-  { name: "Real Estate", to: "/services/real-estate", sectionId: "real-estate-hero" },
-  { name: "Tax Advisory", to: "/services/tax-advisory", sectionId: "tax-hero" }
+  { name: "Wealth Management", to: "/", sectionId: "wealth-hero" },
+  { name: "Corporate Finance", to: "/", sectionId: "corporate-hero" },
+  { name: "Capital Markets", to: "/", sectionId: "capital-markets-hero" },
+  { name: "Real Estate", to: "/", sectionId: "real-estate-hero" },
+  { name: "Tax Advisory", to: "/", sectionId: "tax-hero" }
 ];
 
 const servicesOverviewLink = {
   name: "Services",
-  to: "/services",
+  to: "/",
   sectionId: "services"
 };
 
@@ -224,10 +224,10 @@ const Footer = () => {
     <footer className="bg-black pt-16 pb-10 relative overflow-hidden border-t border-white/5">
       {/* Decorative Gradient Background */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
-      
+
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12 transform-gpu">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a
@@ -257,7 +257,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
- 
+
           {/* Links Columns */}
           {footerLinks.map((section) => (
             <div key={section.title}>
@@ -269,14 +269,14 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {section.title === "Legal" ? (
-                      <button 
+                      <button
                         onClick={() => setActiveModal(link.id)}
                         className="text-white/40 hover:text-white transition-all duration-300 text-[11px] font-light hover:translate-x-2 inline-block text-left uppercase tracking-wider"
                       >
                         {link.name}
                       </button>
                     ) : (
-                      <a 
+                      <a
                         href={link.to}
                         onClick={(e) => handleFooterNav(e, link)}
                         className="text-white/40 hover:text-white transition-all duration-300 text-[11px] font-light hover:translate-x-2 inline-block uppercase tracking-wider"
@@ -289,7 +289,7 @@ const Footer = () => {
               </ul>
             </div>
           ))}
- 
+
         </div>
 
         {/* Bottom Bar */}
@@ -331,7 +331,7 @@ const Footer = () => {
                 {/* Real Wood & Linen Texture Overlays */}
                 <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')] z-20" />
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] z-20" />
-                
+
                 {/* Top Banner Header */}
                 <div className="p-6 md:p-8 border-b border-white/5 bg-black/40 flex items-start justify-between relative z-30 shrink-0">
                   <div>
@@ -361,7 +361,7 @@ const Footer = () => {
                 </div>
 
                 {/* Scrollable Document Content */}
-                <div 
+                <div
                   className="flex-1 overflow-y-auto p-6 md:p-10 space-y-8 md:space-y-10 relative z-30 custom-scrollbar"
                   data-lenis-prevent="true"
                 >
