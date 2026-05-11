@@ -39,7 +39,7 @@ const SplashScreen = ({ onAnimationEnd }) => {
         </div>
         
         <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s] flex flex-col items-center w-full">
-          <p className="text-[27px] xs:text-[32px] sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-black text-brand-primary tracking-[0.08em] xs:tracking-[0.12em] leading-[1.1] mb-5 sm:mb-6 text-center max-w-[90vw]">
+          <p className="text-[20px] xs:text-[24px] sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-brand-primary tracking-[0.24em] leading-[1.3] mb-5 sm:mb-6 text-center max-w-[90vw]">
             ATHIRAA <br className="sm:hidden" /> CONSULTANTS
           </p>
 
@@ -50,7 +50,7 @@ const SplashScreen = ({ onAnimationEnd }) => {
             <span className="block w-[75px] xs:w-[110px] sm:w-[160px] h-[1.5px] sm:h-[2px] bg-brand-gold/60" />
           </div>
 
-          <p className="text-[14px] xs:text-[16px] sm:text-lg md:text-xl tracking-[0.05em] xs:tracking-[0.08em] sm:tracking-[0.2em] text-brand-muted font-extrabold uppercase font-montserrat text-center max-w-[85vw] leading-relaxed">
+          <p className="text-[12px] xs:text-[14px] sm:text-lg md:text-xl tracking-[0.22em] text-brand-muted font-medium uppercase font-montserrat text-center max-w-[85vw] leading-relaxed">
             Built on trust. <br className="xs:hidden" /> Driven by vision
           </p>
         </div>
