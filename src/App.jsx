@@ -171,7 +171,7 @@ function LandingPage() {
       <InViewSection id="why-choose-us" estimatedHeight="105vh" component={WhyChooseUs} />
       <InViewSection id="expertise" estimatedHeight="120vh" component={Expertise} />
       <InViewSection id="contact" estimatedHeight="100vh" component={Contact} />
-      
+
       <Footer />
     </motion.main>
   );
@@ -232,12 +232,12 @@ function AppContent() {
       {/* GLOBAL AESTHETICS */}
       <div className="noise-overlay" />
       <CustomCursor />
-      
+
       <SEO />
       <JSONLD />
       <Navbar />
       <RouteScrollManager enabled />
-      
+
       <LandingPage />
     </div>
   );
