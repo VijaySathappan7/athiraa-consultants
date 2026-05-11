@@ -304,12 +304,12 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.70 }}
-          className="mt-28 pt-16 border-t border-brand-primary/10 text-center"
+          className="mt-12 sm:mt-24 pt-8 sm:pt-16 border-t border-brand-primary/10 text-center"
         >
           <blockquote className="text-xl md:text-3xl text-brand-primary font-playfair italic max-w-4xl mx-auto leading-relaxed">
             "We believe in building lasting relationships — offering honest advice, clear solutions, and a genuine commitment to your financial well-being."
           </blockquote>
-          <p className="mt-8 text-[10px] tracking-[0.6em] uppercase text-brand-gold font-bold">Athiraa Consultants</p>
+          <p className="mt-5 sm:mt-8 text-[10px] tracking-[0.6em] uppercase text-brand-gold font-bold">Athiraa Consultants</p>
         </motion.div>
       </div>
     </section>

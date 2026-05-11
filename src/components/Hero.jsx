@@ -32,6 +32,16 @@ const Hero = () => {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(80);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
@@ -103,10 +113,10 @@ const Hero = () => {
 
         {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          initial={isMobile ? { opacity: 0, y: "25%", filter: 'blur(4px)' } : { opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+          whileInView={isMobile ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobile ? { duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-[40%] flex flex-col items-center justify-center order-1 lg:order-2 mt-4 lg:mt-0"
         >
           <div className="relative">
@@ -135,7 +145,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+            transition={isMobile ? { duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 sm:mt-8 text-center max-w-lg px-4 flex flex-col items-center justify-center"
           >
             {/* 1. Quote (Very big, elegant, placed directly below Ganesha) */}
@@ -167,10 +177,10 @@ const Hero = () => {
 
         {/* LEFT SIDE: TEXT */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={isMobile ? { opacity: 0, y: "25%" } : { opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+          transition={isMobile ? { duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-[60%] order-2 lg:order-1"
         >
           <div className="p-0 md:p-6 xl:p-12 transition-all duration-400 text-center lg:text-left">
@@ -178,7 +188,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+              transition={isMobile ? { duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="hidden lg:flex items-center justify-center lg:justify-start gap-6 mb-4 lg:mb-8"
             >
               <p className="text-xs sm:text-xs md:text-xs tracking-[0.5em] md:tracking-[0.7em] uppercase text-brand-gold font-black">
@@ -189,20 +199,20 @@ const Hero = () => {
 
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
               <motion.span
-                initial={{ opacity: 0, y: 50 }}
+                initial={isMobile ? { opacity: 0, y: 20 } : { opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+                transition={isMobile ? { duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block"
               >
                 Trusted Financial Advisory for
               </motion.span>
               <br />
               <motion.span
-                initial={{ opacity: 0, y: 50 }}
+                initial={isMobile ? { opacity: 0, y: 20 } : { opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+                transition={isMobile ? { duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block"
               >
                 Wealth and <span className="italic text-brand-gold/90 font-light">Growth.</span>
@@ -210,10 +220,10 @@ const Hero = () => {
             </h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={isMobile ? { opacity: 0, y: 15 } : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+              transition={isMobile ? { duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="text-[17px] xs:text-[18px] sm:text-xl xl:text-xl text-white/80 leading-relaxed mb-4 sm:mb-8 lg:mb-8 max-w-2xl font-light mx-auto lg:mx-0"
             >
               We provide personalised financial and advisory solutions designed to help individuals, families, and businesses create, grow, and protect wealth with clarity and confidence.
@@ -223,7 +233,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+              transition={isMobile ? { duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center justify-center lg:justify-start text-white/70 font-light text-sm sm:text-xl mb-6 sm:mb-10 lg:mb-8 h-10 font-playfair"
             >
               <span className="mr-3 md:mr-4 text-white/50">Expertise in</span>
@@ -237,7 +247,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
+              transition={isMobile ? { duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center lg:justify-start"
             >
               <motion.a
