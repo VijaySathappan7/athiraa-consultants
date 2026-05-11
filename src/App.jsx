@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, useLocation, useNavigate } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
@@ -179,9 +179,22 @@ function LandingPage() {
 
 function AppContent() {
   const [showSplash, setShowSplash] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Disable browser scroll recovery and scroll to absolute top immediately on mount/reload
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    navigate('/', { replace: true });
+  }, [navigate]);
 
   useEffect(() => {
     if (showSplash) return;
+
+    // Double-check scroll reset when splash ends to start precisely on the main hero
+    window.scrollTo(0, 0);
 
     const lenis = new Lenis({
       duration: 1.1,
