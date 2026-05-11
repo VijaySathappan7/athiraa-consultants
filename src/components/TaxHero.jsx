@@ -59,17 +59,27 @@ const TaxHero = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#tax-content" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState(null, '', '#tax-content');
+                    window.scrollToSection?.('tax-content');
+                  }}
                   className="inline-block text-center px-6 py-2.5 lg:px-7 lg:py-3 sm:px-9 sm:py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
                 >
-                  Explore Strategy
+                  Explore
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState(null, '', '#contact');
+                    window.scrollToSection?.('contact');
+                  }}
                   className="inline-block text-center px-6 py-2.5 lg:px-7 lg:py-3 sm:px-9 sm:py-4 border border-white/20 text-white text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 hover:border-white transition-all duration-500 backdrop-blur-md magnetic"
                 >
-                  Book a Consultation
+                  Get Consultation
                 </motion.a>
               </div>
             </motion.div>
@@ -124,17 +134,27 @@ const TaxHero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#tax-content" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.history.pushState(null, '', '#tax-content');
+                  window.scrollToSection?.('tax-content');
+                }}
                 className="flex-1 flex items-center justify-center text-center py-2.5 px-2 bg-brand-gold text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black shadow-2xl"
               >
-                Explore Strategy
+                Explore
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.history.pushState(null, '', '#contact');
+                  window.scrollToSection?.('contact');
+                }}
                 className="flex-1 flex items-center justify-center text-center py-2.5 px-2 border border-white/20 text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black backdrop-blur-md"
               >
-                Consultation
+                Get Consultation
               </motion.a>
             </motion.div>
           </div>

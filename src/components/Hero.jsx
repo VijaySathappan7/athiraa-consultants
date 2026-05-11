@@ -79,7 +79,7 @@ const Hero = () => {
     window.scrollToSection?.(link.sectionId);
   };
 
-  const contactLink = mainLinks.find((link) => link.name === "Contact");
+  const aboutLink = mainLinks.find((link) => link.name === "About");
 
   return (
     <section id="hero" className="relative min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] w-full flex items-center overflow-hidden bg-black m-0 p-0 scroll-mt-0">
@@ -274,8 +274,8 @@ const Hero = () => {
               <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href={contactLink.to}
-                onClick={(e) => handleHeroNav(e, contactLink)}
+                href={servicesOverviewLink.to}
+                onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
                 className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
               >
                 Get Started
@@ -283,8 +283,8 @@ const Hero = () => {
               <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href={servicesOverviewLink.to}
-                onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
+                href={aboutLink.to}
+                onClick={(e) => handleHeroNav(e, aboutLink)}
                 className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
               >
                 Learn More
