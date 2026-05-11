@@ -109,7 +109,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-4 lg:gap-12 pt-[74px] xs:pt-[80px] pb-14 xs:pb-16 lg:pt-[100px] lg:pb-6">
 
         {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
         <motion.div
@@ -117,7 +117,7 @@ const Hero = () => {
           whileInView={isMobile ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.1 }}
           transition={isMobile ? { duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-[40%] flex flex-col items-center justify-center order-1 lg:order-2 mt-4 lg:mt-0"
+          className="w-full lg:w-[40%] flex flex-col items-center justify-center order-1 lg:order-2 mt-0 lg:mt-0"
         >
           <div className="relative">
             {/* Majestic floating animation for Ganesha */}
@@ -146,11 +146,11 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={isMobile ? { duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 sm:mt-8 text-center max-w-lg px-4 flex flex-col items-center justify-center"
+            className="mt-2.5 sm:mt-8 text-center max-w-lg px-4 flex flex-col items-center justify-center"
           >
             {/* 1. Quote (Very big, elegant, placed directly below Ganesha) */}
             {/* 1. Official Logo Image & Name (Mobile view branding, hidden on desktop) */}
-            <div className="flex lg:hidden items-center justify-center gap-4 mb-4 sm:mb-6">
+            <div className="flex lg:hidden items-center justify-center gap-4 mb-2.5 sm:mb-6">
               <img src={logoImage} className="w-[46px] h-[46px] xs:w-[55px] xs:h-[55px] sm:w-[64px] sm:h-[64px] object-contain drop-shadow-2xl" alt="Athiraa Logo" />
               <div className="flex flex-col text-left">
                 <h2 className="text-[18.5px] xs:text-[21px] sm:text-[23px] font-black tracking-[0.25em] uppercase text-white leading-none">
@@ -163,10 +163,10 @@ const Hero = () => {
             </div>
 
             {/* Divider (visible only on mobile viewports, matching the above logo block) */}
-            <div className="w-16 h-[1px] bg-brand-gold/30 mx-auto mb-4 sm:mb-6 lg:hidden"></div>
+            <div className="w-16 h-[1px] bg-brand-gold/30 mx-auto mb-2.5 sm:mb-6 lg:hidden"></div>
 
             {/* 2. Quote (Very big, elegant, placed below logo on mobile, directly below Ganesha on desktop) */}
-            <p className="text-[21px] xs:text-[25px] sm:text-[30px] lg:text-[23px] xl:text-[26px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-4 sm:mb-6">
+            <p className="text-[21px] xs:text-[25px] sm:text-[30px] lg:text-[23px] xl:text-[26px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-2 sm:mb-6">
               "Prosperity begins with the right guidance."
             </p>
 
@@ -272,6 +272,27 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* MOBILE SCROLL INDICATOR */}
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: [0, 1, 0], y: [0, 8, 0] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 lg:hidden flex flex-col items-center gap-1 cursor-pointer pointer-events-none"
+      >
+        <span className="text-[9px] tracking-[0.3em] uppercase text-brand-gold font-bold pl-[0.3em]">
+          Scroll
+        </span>
+        <svg 
+          className="w-4.5 h-4.5 text-brand-gold/80" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2.5" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </motion.div>
     </section>
   );
 };
