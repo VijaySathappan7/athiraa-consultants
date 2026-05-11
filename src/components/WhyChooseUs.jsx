@@ -210,7 +210,7 @@ const WhyChooseUs = () => {
                   window.history.pushState(null, '', '#expertise');
                   window.scrollToSection?.('expertise');
                 }}
-                className="flex-1 flex items-center justify-center text-center py-3.5 px-2 bg-brand-gold text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black shadow-2xl"
+                className="flex-1 flex items-center justify-center text-center py-2.5 px-2 bg-brand-gold text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black shadow-2xl"
               >
                 Explore
               </motion.a>
@@ -223,7 +223,7 @@ const WhyChooseUs = () => {
                   window.history.pushState(null, '', '#contact');
                   window.scrollToSection?.('contact');
                 }}
-                className="flex-1 flex items-center justify-center text-center py-3.5 px-2 border border-white/20 text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black backdrop-blur-md"
+                className="flex-1 flex items-center justify-center text-center py-2.5 px-2 border border-white/20 text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] uppercase rounded-full font-black backdrop-blur-md"
               >
                 Get Consultation
               </motion.a>

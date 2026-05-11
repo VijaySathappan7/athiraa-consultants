@@ -269,14 +269,14 @@ const Hero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={isMobile ? { duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] } : { duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center lg:justify-start"
+              className="flex flex-row gap-3 sm:gap-6 justify-center lg:justify-start w-full max-w-[340px] xs:max-w-md sm:max-w-none mx-auto lg:mx-0"
             >
               <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href={servicesOverviewLink.to}
                 onClick={(e) => handleHeroNav(e, servicesOverviewLink)}
-                className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 bg-white text-black font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-white shadow-2xl text-center magnetic"
+                className="flex-1 sm:flex-initial inline-block text-center px-3 py-2.5 sm:px-9 sm:py-4 lg:px-7 lg:py-3 bg-white text-black text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] sm:text-[10px] md:text-[11px] sm:tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-300 shadow-2xl magnetic"
               >
                 Get Started
               </motion.a>
@@ -285,7 +285,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 href={aboutLink.to}
                 onClick={(e) => handleHeroNav(e, aboutLink)}
-                className="w-full sm:w-auto px-6 py-2.5 lg:px-8 lg:py-3 md:px-10 md:py-3.5 sm:px-11 sm:py-4 border border-white/40 text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white text-center backdrop-blur-md magnetic"
+                className="flex-1 sm:flex-initial inline-block text-center px-3 py-2.5 sm:px-9 sm:py-4 lg:px-7 lg:py-3 border border-white/40 text-white text-[8px] xs:text-[9.5px] tracking-[0.2em] xs:tracking-[0.3em] pl-[0.2em] xs:pl-[0.3em] sm:text-[10px] md:text-[11px] sm:tracking-[0.4em] uppercase rounded-full font-black hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md magnetic"
               >
                 Learn More
               </motion.a>
