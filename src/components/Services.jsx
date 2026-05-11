@@ -306,7 +306,7 @@ const Services = () => {
           transition={{ duration: 0.70 }}
           className="mt-12 sm:mt-24 pt-8 sm:pt-16 border-t border-brand-primary/10 text-center"
         >
-          <blockquote className="text-xl md:text-3xl text-brand-primary font-playfair italic max-w-4xl mx-auto leading-relaxed">
+          <blockquote className="text-[23px] md:text-[34.5px] text-brand-primary font-playfair italic max-w-4xl mx-auto leading-relaxed">
             "We believe in building lasting relationships — offering honest advice, clear solutions, and a genuine commitment to your financial well-being."
           </blockquote>
           <p className="mt-5 sm:mt-8 text-[10px] tracking-[0.6em] uppercase text-brand-gold font-bold">Athiraa Consultants</p>
