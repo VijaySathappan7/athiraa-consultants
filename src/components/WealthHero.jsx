@@ -83,7 +83,7 @@ const WealthHero = () => {
                 <motion.a 
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  href="#services" 
+                  href="#wealth-content" 
                   className="inline-block text-center px-6 py-2.5 sm:px-9 sm:py-4 bg-white text-black text-[10px] md:text-[11px] tracking-[0.4em] uppercase rounded-full font-black hover:bg-brand-gold hover:text-white transition-all duration-500 shadow-2xl magnetic"
                 >
                   Services
@@ -148,7 +148,7 @@ const WealthHero = () => {
               <motion.a 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="#services" 
+                href="#wealth-content" 
                 className="flex-1 flex items-center justify-center text-center py-2.5 px-2 bg-brand-gold text-white text-[10px] xs:text-[11px] tracking-[0.25em] xs:tracking-[0.35em] pl-[0.25em] xs:pl-[0.35em] uppercase rounded-full font-black shadow-2xl"
               >
                 Services
