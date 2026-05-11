@@ -38,19 +38,19 @@ const SplashScreen = ({ onAnimationEnd }) => {
           </video>
         </div>
         
-        <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s] flex flex-col items-center">
-          <p className="text-xl md:text-2xl lg:text-3xl font-montserrat font-bold text-brand-primary tracking-[0.25em] leading-[1.2] mb-2">
+        <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s] flex flex-col items-center w-full">
+          <p className="text-[12px] xs:text-[15px] sm:text-xl md:text-2xl lg:text-3xl font-montserrat font-bold text-brand-primary tracking-[0.2em] xs:tracking-[0.25em] leading-none mb-3 sm:mb-4 text-center">
             ATHIRAA CONSULTANTS
           </p>
 
-          <div className="flex items-center justify-center mb-4 gap-[10px]">
-            <span className="block w-[80px] md:w-[120px] h-[1.5px] bg-brand-gold" />
-            <div className="w-[8px] h-[8px] bg-brand-gold rotate-45" />
-            <div className="w-[4px] h-[4px] bg-brand-gold rotate-45" />
-            <span className="block w-[80px] md:w-[120px] h-[1.5px] bg-brand-gold" />
+          <div className="flex items-center justify-center mb-3.5 sm:mb-5 gap-2 sm:gap-[10px]">
+            <span className="block w-[40px] xs:w-[60px] sm:w-[80px] md:w-[120px] h-[1px] sm:h-[1.5px] bg-brand-gold/60" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-gold rotate-45" />
+            <div className="w-[3px] h-[3px] sm:w-1 sm:h-1 bg-brand-gold rotate-45" />
+            <span className="block w-[40px] xs:w-[60px] sm:w-[80px] md:w-[120px] h-[1px] sm:h-[1.5px] bg-brand-gold/60" />
           </div>
 
-          <p className="text-[9px] xs:text-[10px] sm:text-[12px] tracking-[var(--spacing-brand-normal)] text-brand-muted font-medium uppercase font-montserrat">
+          <p className="text-[7.5px] xs:text-[9px] sm:text-[10px] md:text-xs tracking-[0.18em] xs:tracking-[0.22em] sm:tracking-[0.3em] text-brand-muted font-bold uppercase font-montserrat text-center">
             Built on trust. Driven by vision
           </p>
         </div>
