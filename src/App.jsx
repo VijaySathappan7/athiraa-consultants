@@ -62,6 +62,7 @@ const scrollToSection = (sectionId, immediate = false, attempt = 0) => {
   };
 
   if (window.lenis) {
+    window.lenis.start(); // Revive scroll in case stopped by mobile overlay
     window.lenis.scrollTo(section, {
       duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Luxurious exponential glide

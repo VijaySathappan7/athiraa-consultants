@@ -101,7 +101,7 @@ const Expertise = () => {
                 {/* 2. Perfectly Centered Graphics Container */}
                 <div className="flex-shrink-0 flex flex-row items-center justify-center gap-4 xs:gap-8 sm:gap-16 lg:gap-28 xl:gap-36 relative z-10 w-full">
                   {/* Left: Ganesha (Stacked on mobile, Left on laptop) */}
-                  <div className="relative flex items-center justify-center h-[70px] w-[70px] xs:h-[100px] xs:w-[100px] sm:h-[110px] sm:w-[110px] md:h-[150px] md:w-[150px] lg:h-[220px] lg:w-[220px] xl:h-[270px] xl:w-[270px] z-10">
+                  <div className="relative flex items-center justify-center h-[95px] w-[95px] xs:h-[120px] xs:w-[120px] sm:h-[110px] sm:w-[110px] md:h-[150px] md:w-[150px] lg:h-[220px] lg:w-[220px] xl:h-[270px] xl:w-[270px] z-10">
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -128,7 +128,7 @@ const Expertise = () => {
                   <motion.div
                     animate={{ y: [0, -3, 0] }}
                     transition={{ duration: 5, delay: 0.6, repeat: Infinity, ease: "easeInOut" }}
-                    className="h-[54px] w-[54px] xs:h-[76px] xs:w-[76px] sm:h-[84px] sm:w-[84px] md:h-[115px] md:w-[115px] lg:h-[170px] lg:w-[170px] xl:h-[210px] xl:w-[210px] flex items-center justify-center relative z-10"
+                    className="h-[75px] w-[75px] xs:h-[95px] xs:w-[95px] sm:h-[84px] sm:w-[84px] md:h-[115px] md:w-[115px] lg:h-[170px] lg:w-[170px] xl:h-[210px] xl:w-[210px] flex items-center justify-center relative z-10"
                   >
                     <img 
                       src={logoImage} 

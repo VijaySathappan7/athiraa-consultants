@@ -202,12 +202,19 @@ const Footer = () => {
   const handleFooterNav = (e, link) => {
     e.preventDefault();
 
+    // Instantly release scroll locks to ensure touch scrolling is active immediately
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    if (window.lenis) {
+      window.lenis.start();
+    }
+
     if (location.pathname !== link.to) {
       navigate(link.to + '#' + link.sectionId);
     } else {
       setTimeout(() => {
         window.scrollToSection?.(link.sectionId);
-      }, 100);
+      }, 250);
     }
   };
 
