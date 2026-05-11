@@ -175,13 +175,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: [0, 1, 0], y: [0, 6, 0] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              className="mt-3 mb-1 lg:hidden flex flex-col items-center gap-1 cursor-pointer pointer-events-none"
+              className="mt-4 mb-2 lg:hidden flex flex-col items-center gap-1.5 cursor-pointer pointer-events-none"
             >
-              <span className="text-[9px] tracking-[0.3em] uppercase text-brand-gold font-bold pl-[0.3em]">
+              <span className="text-[12.5px] tracking-[0.4em] uppercase text-brand-gold font-bold pl-[0.4em]">
                 Scroll
               </span>
               <svg 
-                className="w-4.5 h-4.5 text-brand-gold/80" 
+                className="w-[26px] h-[26px] text-brand-gold/90" 
                 fill="none" 
                 stroke="currentColor" 
                 strokeWidth="2.5" 
