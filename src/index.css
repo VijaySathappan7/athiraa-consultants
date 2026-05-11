@@ -96,7 +96,6 @@
   html {
     scroll-behavior: auto;
     scroll-padding-top: 0px;
-    overscroll-behavior: none;
     text-rendering: optimizeLegibility;
     -webkit-overflow-scrolling: touch; /* Kinetic touch momentum scrolling for iOS/macOS */
   }
@@ -109,7 +108,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
-    overscroll-behavior-y: none;
   }
 
   /* Premium Sleek Scrollbar */
