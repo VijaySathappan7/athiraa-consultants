@@ -135,7 +135,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[460px] xs:h-[530px] sm:h-[600px] lg:h-[clamp(430px,63vh,670px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[460px] xs:h-[530px] sm:h-[600px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
                 fetchPriority="high"
                 loading="eager"
               />
@@ -166,7 +166,7 @@ const Hero = () => {
             <div className="w-16 h-[1px] bg-brand-gold/30 mx-auto mb-4 sm:mb-6 lg:hidden"></div>
 
             {/* 2. Quote (Very big, elegant, placed below logo on mobile, directly below Ganesha on desktop) */}
-            <p className="text-[21px] xs:text-[25px] sm:text-[30px] lg:text-[26.5px] xl:text-[30px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-4 sm:mb-6">
+            <p className="text-[21px] xs:text-[25px] sm:text-[30px] lg:text-[23px] xl:text-[26px] text-brand-gold font-playfair italic tracking-wide leading-relaxed font-light mb-4 sm:mb-6">
               "Prosperity begins with the right guidance."
             </p>
 
@@ -197,7 +197,7 @@ const Hero = () => {
               <div className="w-28 h-[1px] bg-brand-gold/40 hidden md:block"></div>
             </motion.div>
 
-            <h1 className="text-[34.5px] xs:text-[41.5px] sm:text-[55px] md:text-[3.45rem] lg:text-[3.9rem] xl:text-[4.37rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
+            <h1 className="text-[34.5px] xs:text-[41.5px] sm:text-[55px] md:text-[3rem] lg:text-[3.4rem] xl:text-[3.8rem] font-playfair text-white leading-[1.15] tracking-tight mb-4 sm:mb-8 lg:mb-8 perspective-1000">
               <motion.span
                 initial={isMobile ? { opacity: 0, y: 20 } : { opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
