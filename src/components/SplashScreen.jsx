@@ -25,7 +25,7 @@ const SplashScreen = ({ onAnimationEnd }) => {
       }`}
     >
       <div className="flex flex-col items-center justify-center text-center px-4 max-w-4xl">
-        <div className="w-[26vw] xs:w-[22vw] sm:w-[18vw] md:w-[15vw] max-w-[200px] min-w-[90px] mb-4">
+        <div className="w-[88vw] xs:w-[92vw] sm:w-[50vw] md:w-[38vw] lg:w-[28vw] max-w-[440px] min-w-[260px] mb-8">
           <video
             ref={videoRef}
             className="w-full h-auto object-contain"
@@ -38,20 +38,20 @@ const SplashScreen = ({ onAnimationEnd }) => {
           </video>
         </div>
         
-        <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s] flex flex-col items-center">
-          <p className="text-[12.5px] xs:text-[14.5px] sm:text-lg md:text-2xl lg:text-3xl font-montserrat font-semibold text-brand-primary tracking-[0.24em] leading-[1.2] mb-3 text-center whitespace-nowrap">
-            ATHIRAA CONSULTANTS
+        <div className="animate-fade-in-up opacity-0 [animation-delay:0.2s] flex flex-col items-center w-full">
+          <p className="text-[27px] xs:text-[32px] sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-black text-brand-primary tracking-[0.08em] xs:tracking-[0.12em] leading-[1.1] mb-5 sm:mb-6 text-center max-w-[90vw]">
+            ATHIRAA <br className="sm:hidden" /> CONSULTANTS
           </p>
 
-          <div className="flex items-center justify-center mb-3 gap-2 sm:gap-[10px]">
-            <span className="block w-[50px] xs:w-[60px] sm:w-[80px] md:w-[120px] h-[1px] bg-brand-gold/80" />
-            <div className="w-[5px] h-[5px] sm:w-[7px] sm:h-[7px] bg-brand-gold rotate-45" />
-            <div className="w-[2.5px] h-[2.5px] sm:w-[3.5px] sm:h-[3.5px] bg-brand-gold rotate-45" />
-            <span className="block w-[50px] xs:w-[60px] sm:w-[80px] md:w-[120px] h-[1px] bg-brand-gold/80" />
+          <div className="flex items-center justify-center mb-5 sm:mb-7 gap-2.5 sm:gap-[12px]">
+            <span className="block w-[75px] xs:w-[110px] sm:w-[160px] h-[1.5px] sm:h-[2px] bg-brand-gold/60" />
+            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-gold rotate-45" />
+            <div className="w-[4px] h-[4px] sm:w-[5px] sm:h-[5px] bg-brand-gold rotate-45" />
+            <span className="block w-[75px] xs:w-[110px] sm:w-[160px] h-[1.5px] sm:h-[2px] bg-brand-gold/60" />
           </div>
 
-          <p className="text-[7.8px] xs:text-[9px] sm:text-[10px] md:text-xs tracking-[0.22em] text-brand-muted font-medium uppercase font-montserrat text-center whitespace-nowrap">
-            Built on trust. Driven by vision
+          <p className="text-[14px] xs:text-[16px] sm:text-lg md:text-xl tracking-[0.05em] xs:tracking-[0.08em] sm:tracking-[0.2em] text-brand-muted font-extrabold uppercase font-montserrat text-center max-w-[85vw] leading-relaxed">
+            Built on trust. <br className="xs:hidden" /> Driven by vision
           </p>
         </div>
       </div>
