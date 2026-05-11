@@ -101,13 +101,13 @@ const Hero = () => {
 
       <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 z-20 flex min-h-[100dvh] lg:min-h-[105vh] lg:h-[105vh] flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-12 pt-[84px] pb-16 xs:pb-20 sm:pb-24 lg:pt-[100px] lg:pb-6">
 
-        {/* RIGHT SIDE: IMAGE (Order 1 on mobile, 2 on desktop) */}
+        {/* RIGHT SIDE: IMAGE (Order 2 on mobile, 2 on desktop) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-[40%] flex flex-col items-center justify-center order-1 lg:order-2 mt-4 lg:mt-0"
+          className="w-full lg:w-[40%] flex flex-col items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
         >
           <div className="relative">
             {/* Majestic floating animation for Ganesha */}
@@ -125,7 +125,7 @@ const Hero = () => {
               <ProgressiveImage
                 src={ganeshImage}
                 alt="Ganesha"
-                className="relative z-10 h-[400px] xs:h-[460px] sm:h-[520px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
+                className="relative z-10 h-[220px] xs:h-[260px] sm:h-[340px] md:h-[400px] lg:h-[clamp(380px,55vh,580px)] w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
                 fetchPriority="high"
                 loading="eager"
               />
@@ -171,7 +171,7 @@ const Hero = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 2.60, delay: 0.80, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-[60%] order-2 lg:order-1"
+          className="w-full lg:w-[60%] order-1 lg:order-1"
         >
           <div className="p-0 md:p-6 xl:p-12 transition-all duration-400 text-center lg:text-left">
             <motion.div
